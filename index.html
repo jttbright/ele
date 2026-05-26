@@ -9,23 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
         :root {
             --dark-deep: #0a0f1c;
             --dark-primary: #0f172a;
-            --dark-card: rgba(17, 24, 39, 0.75);
+            --dark-card: rgba(17,24,39,0.75);
             --gold-primary: #eab308;
-            --gold-gradient: linear-gradient(135deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
-            --gold-glow: rgba(234, 179, 8, 0.4);
+            --gold-gradient: linear-gradient(135deg,#fde047 0%,#eab308 50%,#ca8a04 100%);
+            --gold-glow: rgba(234,179,8,0.4);
             --text-light: #f3f4f6;
             --text-dim: #9ca3af;
-            --border-light: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(255,255,255,0.08);
             --success: #10b981;
             --danger: #ef4444;
         }
@@ -35,35 +30,21 @@
             color: var(--text-light);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            position: relative;
             overflow-x: hidden;
         }
 
-        /* গ্রিড প্যাটার্ন ব্যাকগ্রাউন্ড */
         body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(234, 179, 8, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(234, 179, 8, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
+            content:"";
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background-image:
+                linear-gradient(rgba(234,179,8,0.03) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(234,179,8,0.03) 1px,transparent 1px);
+            background-size:50px 50px;
+            pointer-events:none; z-index:0;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 16px 16px 90px;
-            position: relative;
-            z-index: 1;
-        }
+        .container { max-width:600px; margin:0 auto; padding:16px 16px 90px; position:relative; z-index:1; }
 
-        /* গ্লাস-মর্ফিজম কার্ড */
         .glass-card {
             background: var(--dark-card);
             backdrop-filter: blur(16px);
@@ -72,329 +53,167 @@
             border-radius: 32px;
             padding: 1.5rem;
             margin-bottom: 1.2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(234, 179, 8, 0.05);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(234,179,8,0.05);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .glass-card:hover {
-            border-color: rgba(234, 179, 8, 0.3);
-            transform: translateY(-2px);
-        }
+        .glass-card:hover { border-color:rgba(234,179,8,0.3); transform:translateY(-2px); }
 
-        /* প্রিমিয়াম CTA বাটন */
         .cta-premium {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+            display:inline-flex; align-items:center; justify-content:center; gap:12px;
             background: var(--gold-gradient);
-            border: none;
-            padding: 16px 32px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0a0f1c;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-            letter-spacing: 0.5px;
+            border:none; padding:16px 32px; font-size:1.1rem; font-weight:700;
+            color:#0a0f1c; border-radius:60px; cursor:pointer;
+            transition:all 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+            box-shadow:0 4px 15px rgba(234,179,8,0.3);
+            width:100%; max-width:280px; margin:0 auto; letter-spacing:0.5px;
         }
+        .cta-premium i { font-size:1.2rem; transition:transform 0.35s ease; }
+        .cta-premium:hover { transform:scale(1.05); box-shadow:0 0 25px var(--gold-glow),0 8px 25px rgba(234,179,8,0.4); }
+        .cta-premium:hover i.fa-arrow-right { transform:translateX(5px); }
+        .cta-premium:active { transform:scale(0.98); }
 
-        .cta-premium i {
-            font-size: 1.2rem;
-            transition: transform 0.35s ease;
-        }
+        .hero-section { text-align:center; padding:1.5rem 0 1rem; }
+        .hero-icon { font-size:3rem; background:linear-gradient(135deg,#fde047,#eab308); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-title { font-size:1.8rem; font-weight:800; margin:0.5rem 0; background:linear-gradient(135deg,#ffffff,#eab308); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-subtitle { color:var(--text-dim); font-size:0.9rem; margin-bottom:1.5rem; }
 
-        .cta-premium:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px var(--gold-glow), 0 8px 25px rgba(234, 179, 8, 0.4);
-        }
-
-        .cta-premium:hover i {
-            transform: translateX(5px);
-        }
-
-        .cta-premium:active {
-            transform: scale(0.98);
-        }
-
-        /* হিরো সেকশন */
-        .hero-section {
-            text-align: center;
-            padding: 1.5rem 0 1rem;
-        }
-
-        .hero-icon {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #fde047, #eab308);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 0.5rem 0;
-            background: linear-gradient(135deg, #ffffff, #eab308);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-subtitle {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* সেকেন্ডারি নেভ */
         .secondary-nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            border-radius: 50px;
-            padding: 8px 16px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            border: 1px solid var(--border-light);
+            background:rgba(15,23,42,0.8); backdrop-filter:blur(12px);
+            border-radius:50px; padding:8px 16px; margin-bottom:20px;
+            display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+            border:1px solid var(--border-light);
         }
-
         .secondary-link {
-            background: rgba(30, 41, 59, 0.7);
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.75rem;
-            padding: 6px 14px;
-            border-radius: 40px;
-            transition: all 0.2s;
-            white-space: nowrap;
+            background:rgba(30,41,59,0.7); color:var(--text-dim);
+            text-decoration:none; font-size:0.75rem; padding:6px 14px;
+            border-radius:40px; transition:all 0.2s; white-space:nowrap;
         }
+        .secondary-link:hover { background:var(--gold-primary); color:#0a0f1c; }
 
-        .secondary-link:hover {
-            background: var(--gold-primary);
-            color: #0a0f1c;
-        }
-
-        /* বটম নেভ */
         .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(234, 179, 8, 0.2);
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 12px 22px;
-            z-index: 100;
+            position:fixed; bottom:0; left:0; right:0;
+            background:rgba(15,23,42,0.97); backdrop-filter:blur(20px);
+            border-top:1px solid rgba(234,179,8,0.2);
+            display:flex; justify-content:space-around;
+            padding:10px 12px 22px; z-index:100;
         }
-
         .nav-tab {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-size: 0.65rem;
-            cursor: pointer;
-            padding: 6px 14px;
-            border-radius: 30px;
-            transition: all 0.2s;
+            display:flex; flex-direction:column; align-items:center; gap:4px;
+            background:none; border:none; color:var(--text-dim);
+            font-size:0.65rem; cursor:pointer; padding:6px 14px;
+            border-radius:30px; transition:all 0.2s;
         }
+        .nav-tab i { font-size:1.3rem; }
+        .nav-tab.active { color:var(--gold-primary); background:rgba(234,179,8,0.12); }
 
-        .nav-tab i {
-            font-size: 1.3rem;
-        }
+        .page { display:none; animation:fadeSlide 0.35s ease-out; }
+        .page.active { display:block; }
+        @keyframes fadeSlide { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
-        .nav-tab.active {
-            color: var(--gold-primary);
-            background: rgba(234, 179, 8, 0.12);
-        }
-
-        /* পেজ */
-        .page {
-            display: none;
-            animation: fadeSlide 0.35s ease-out;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* লিস্ট আইটেম */
         .notice-item, .job-item, .product-item {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            padding: 1rem;
-            margin-bottom: 12px;
-            border: 1px solid var(--border-light);
+            background:rgba(15,23,42,0.6); backdrop-filter:blur(8px);
+            border-radius:24px; padding:1rem; margin-bottom:12px;
+            border:1px solid var(--border-light);
         }
+        .product-img { width:100%; height:140px; object-fit:cover; border-radius:18px; margin-bottom:10px; background:#1e293b; }
 
-        .product-img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 18px;
-            margin-bottom: 10px;
-            background: #1e293b;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.2rem;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            border-left: 4px solid var(--gold-primary);
-            padding-left: 12px;
-        }
+        .section-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:10px; }
+        .section-title { font-size:1.3rem; font-weight:700; border-left:4px solid var(--gold-primary); padding-left:12px; }
 
         .admin-btn {
-            background: var(--gold-gradient);
-            border: none;
-            color: #0a0f1c;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            cursor: pointer;
+            background:var(--gold-gradient); border:none;
+            color:#0a0f1c; font-weight:600; padding:8px 18px;
+            border-radius:40px; font-size:0.75rem; cursor:pointer;
+            display:none; /* JS দিয়ে দেখানো হবে */
         }
-
-        .admin-icons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-size: 1rem;
-            cursor: pointer;
-            padding: 6px;
-        }
-
-        .icon-btn.del { color: var(--danger); }
-        .icon-btn.edit { color: var(--gold-primary); }
+        .admin-icons { display:flex; justify-content:flex-end; gap:15px; margin-top:10px; }
+        .icon-btn { background:none; border:none; color:var(--text-dim); font-size:1rem; cursor:pointer; padding:6px; }
+        .icon-btn.del { color:var(--danger); }
+        .icon-btn.edit { color:var(--gold-primary); }
 
         .contact-row {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 12px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            background:rgba(15,23,42,0.6); padding:12px; border-radius:20px;
+            margin-bottom:10px; display:flex; justify-content:space-between;
+            align-items:center; flex-wrap:wrap; gap:8px;
         }
+        .contact-row a { color:var(--gold-primary); text-decoration:none; }
 
         .floating-admin {
-            position: fixed;
-            bottom: 85px;
-            right: 16px;
-            background: var(--gold-gradient);
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(234, 179, 8, 0.5);
-            cursor: pointer;
-            z-index: 150;
-            border: none;
-            font-size: 1.3rem;
-            color: #0a0f1c;
+            position:fixed; bottom:85px; right:16px;
+            background:var(--gold-gradient);
+            width:52px; height:52px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 4px 20px rgba(234,179,8,0.5);
+            cursor:pointer; z-index:150; border:none;
+            font-size:1.3rem; color:#0a0f1c;
+            transition:transform 0.2s;
         }
+        .floating-admin:hover { transform:scale(1.1); }
+        .floating-admin.is-admin { background:linear-gradient(135deg,#ef4444,#dc2626); }
 
+        /* মডাল */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            padding: 20px;
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.9); backdrop-filter:blur(8px);
+            display:flex; align-items:center; justify-content:center;
+            z-index:1000; padding:20px;
         }
-
         .modal-card {
-            background: #111827;
-            border-radius: 32px;
-            padding: 1.8rem;
-            width: 100%;
-            max-width: 350px;
-            border-top: 3px solid var(--gold-primary);
+            background:#111827; border-radius:32px; padding:1.8rem;
+            width:100%; max-width:360px; border-top:3px solid var(--gold-primary);
+            max-height:90vh; overflow-y:auto;
         }
-
+        .modal-card h3 { color:var(--gold-primary); margin-bottom:1rem; }
+        .modal-card label { display:block; color:var(--text-dim); font-size:0.8rem; margin:12px 0 4px; }
         .modal-card input, .modal-card textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 12px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 20px;
-            color: white;
+            width:100%; padding:12px; background:#1e293b;
+            border:1px solid #334155; border-radius:16px; color:white;
+            font-size:0.9rem; outline:none; transition:border-color 0.2s;
         }
+        .modal-card input:focus, .modal-card textarea:focus { border-color:var(--gold-primary); }
+        .modal-card textarea { resize:vertical; min-height:80px; }
+        .modal-btns { display:flex; gap:10px; margin-top:16px; }
+        .btn-gold { background:var(--gold-gradient); border:none; padding:12px; border-radius:30px; flex:1; font-weight:600; color:#0a0f1c; cursor:pointer; font-size:0.9rem; }
+        .btn-gray { background:#334155; border:none; padding:12px; border-radius:30px; flex:1; color:white; cursor:pointer; font-size:0.9rem; }
 
+        /* লোডিং স্পিনার */
+        .spinner {
+            width:40px; height:40px; border:3px solid rgba(234,179,8,0.2);
+            border-top-color:var(--gold-primary); border-radius:50%;
+            animation:spin 0.8s linear infinite; margin:2rem auto;
+        }
+        @keyframes spin { to { transform:rotate(360deg); } }
+
+        /* টোস্ট */
         .toast {
-            position: fixed;
-            bottom: 100px;
-            left: 20px;
-            right: 20px;
-            background: var(--success);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 50px;
-            z-index: 300;
-            animation: fadeOut 2s ease;
+            position:fixed; bottom:100px; left:20px; right:20px;
+            background:var(--success); color:white; text-align:center;
+            padding:12px 20px; border-radius:50px; z-index:500;
+            font-weight:500; animation:toastAnim 2.5s ease forwards;
+            max-width:400px; margin:0 auto;
+        }
+        .toast.error { background:var(--danger); }
+        @keyframes toastAnim {
+            0%   { opacity:0; transform:translateY(10px); }
+            15%  { opacity:1; transform:translateY(0); }
+            75%  { opacity:1; }
+            100% { opacity:0; transform:translateY(-5px); }
         }
 
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            70% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
+        /* এডমিন ব্যাজ */
+        .admin-badge {
+            display:inline-flex; align-items:center; gap:6px;
+            background:rgba(234,179,8,0.15); border:1px solid rgba(234,179,8,0.3);
+            color:var(--gold-primary); padding:4px 12px; border-radius:30px;
+            font-size:0.75rem; margin-left:10px;
         }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-dim);
-            font-size: 0.7rem;
-            margin-top: 1rem;
-        }
+        footer { text-align:center; padding:1rem; color:var(--text-dim); font-size:0.7rem; margin-top:1rem; }
 
-        @media (max-width: 480px) {
-            .cta-premium { padding: 14px 24px; font-size: 1rem; max-width: 240px; }
-            .hero-title { font-size: 1.5rem; }
+        @media (max-width:480px) {
+            .cta-premium { padding:14px 24px; font-size:1rem; max-width:240px; }
+            .hero-title { font-size:1.5rem; }
         }
     </style>
 </head>
@@ -411,61 +230,70 @@
     </div>
 
     <div class="secondary-nav" id="secondaryNavLinks">
-        <span style="color:#4b5563;">লোড হচ্ছে...</span>
+        <div class="spinner" style="width:20px;height:20px;border-width:2px;"></div>
     </div>
 
+    <!-- হোম পেজ -->
     <div id="homePage" class="page active">
         <div class="glass-card">
-            <h2 style="color:var(--gold-primary); margin-bottom: 12px;">✨ স্বাগতম</h2>
-            <p style="color: var(--text-dim); line-height: 1.6;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। আমরা সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন প্রদান করি।</p>
-            <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ 500+ প্রকল্প</span>
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ 8+ বছর</span>
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ 24/7 সাপোর্ট</span>
+            <h2 style="color:var(--gold-primary);margin-bottom:12px;">✨ স্বাগতম</h2>
+            <p style="color:var(--text-dim);line-height:1.6;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। আমরা সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন প্রদান করি।</p>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 500+ প্রকল্প</span>
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 8+ বছর</span>
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 24/7 সাপোর্ট</span>
             </div>
         </div>
     </div>
 
+    <!-- নোটিশ পেজ -->
     <div id="noticePage" class="page">
         <div class="glass-card">
             <div class="section-header">
                 <h3 class="section-title">📢 নোটিশ</h3>
-                <button id="addNoticeBtn" class="admin-btn" style="display:none;">+ যোগান</button>
+                <button id="addNoticeBtn" class="admin-btn">+ যোগান</button>
             </div>
-            <div id="noticesList">লোড হচ্ছে...</div>
+            <div id="noticesList"><div class="spinner"></div></div>
         </div>
     </div>
 
+    <!-- জব পেজ -->
     <div id="jobPage" class="page">
         <div class="glass-card">
             <div class="section-header">
                 <h3 class="section-title">💼 জব সার্কুলার</h3>
-                <button id="addJobBtn" class="admin-btn" style="display:none;">+ পোস্ট</button>
+                <button id="addJobBtn" class="admin-btn">+ পোস্ট</button>
             </div>
-            <div id="jobsList"></div>
+            <div id="jobsList"><div class="spinner"></div></div>
         </div>
     </div>
 
+    <!-- প্রোডাক্ট পেজ -->
     <div id="productPage" class="page">
         <div class="glass-card">
             <div class="section-header">
                 <h3 class="section-title">🔌 প্রোডাক্ট</h3>
-                <button id="addProductBtn" class="admin-btn" style="display:none;">+ প্রোডাক্ট</button>
+                <button id="addProductBtn" class="admin-btn">+ প্রোডাক্ট</button>
             </div>
-            <div id="productsList"></div>
+            <div id="productsList"><div class="spinner"></div></div>
         </div>
     </div>
 
+    <!-- কন্টাক্ট পেজ -->
     <div id="contactPage" class="page">
         <div class="glass-card">
-            <h3 class="section-title">📞 যোগাযোগ</h3>
-            <div id="contactDisplay"></div>
-            <button id="editContactBtn" class="admin-btn" style="margin-top: 1rem; display:none;"><i class="fas fa-edit"></i> কন্টাক্ট এডিট</button>
+            <div class="section-header">
+                <h3 class="section-title">📞 যোগাযোগ</h3>
+                <button id="editContactBtn" class="admin-btn"><i class="fas fa-edit"></i> এডিট</button>
+            </div>
+            <div id="contactDisplay"><div class="spinner"></div></div>
         </div>
     </div>
-    <footer>⚡ Google Sheets Powered | ডাটা স্থায়ী</footer>
+
+    <footer>⚡ Google Sheets Powered | ডাটা স্থায়ী সংরক্ষিত</footer>
 </div>
 
+<!-- বটম নেভ -->
 <div class="bottom-nav">
     <button class="nav-tab active" data-page="home"><i class="fas fa-home"></i><span>হোম</span></button>
     <button class="nav-tab" data-page="notice"><i class="fas fa-bullhorn"></i><span>নোটিশ</span></button>
@@ -474,177 +302,1172 @@
     <button class="nav-tab" data-page="contact"><i class="fas fa-headset"></i><span>কন্টাক্ট</span></button>
 </div>
 
-<button class="floating-admin" id="floatingAdminBtn"><i class="fas fa-user-shield"></i></button>
+<!-- ফ্লোটিং অ্যাডমিন বাটন -->
+<button class="floating-admin" id="floatingAdminBtn" title="Admin Panel">
+    <i class="fas fa-user-shield"></i>
+</button>
 
 <script>
-    // ========== কনফিগারেশন ==========
-    // 🔴 এখানে আপনার Google Apps Script Web App URL বসান 🔴
-    const API_URL = 'https://script.google.com/macros/s/AKfycbzi3p4k2C6guesD8zPKjA6j9yqkeC-mE1Yz9pqPG-7oK1VbAKjwZpe7QrY4chK3q6_E/exec';
-    
-    let isAdmin = false;
-    let sessionToken = null;
-    let notices = [], jobs = [], products = [], contacts = {}, navLinks = [];
+// ========== কনফিগারেশন ==========
+// 🔴 আপনার Google Apps Script Web App URL এখানে বসান 🔴
+const API_URL = 'https://script.google.com/macros/s/AKfycbzi3p4k2C6guesD8zPKjA6j9yqkeC-mE1Yz9pqPG-7oK1VbAKjwZpe7QrY4chK3q6_E/exec';
 
-    function showToast(msg) {
-        let t = document.createElement('div');
-        t.className = 'toast';
-        t.innerText = msg;
-        document.body.appendChild(t);
-        setTimeout(() => t.remove(), 2000);
-    }
+let isAdmin = false;
+let notices = [], jobs = [], products = [], contacts = {}, navLinks = [];
 
-    async function callAPI(action, data = {}) {
-        try {
-            const payload = { action, ...data };
-            if (sessionToken) payload.token = sessionToken;
-            
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(payload)
-            });
-            
-            const result = await response.json();
-            if (result.token) sessionToken = result.token;
-            return result;
-        } catch (error) {
-            console.error('API Error:', error);
-            return { success: false, error: error.message };
-        }
-    }
+// ========== টোস্ট ==========
+function showToast(msg, isError = false) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const t = document.createElement('div');
+    t.className = 'toast' + (isError ? ' error' : '');
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2600);
+}
 
-    async function loadAll() {
-        try {
-            const [noticesRes, jobsRes, productsRes, contactsRes, navRes] = await Promise.all([
-                callAPI('getNotices'), callAPI('getJobs'), callAPI('getProducts'),
-                callAPI('getContacts'), callAPI('getNavLinks')
-            ]);
-            
-            if (noticesRes.success) notices = noticesRes.data;
-            if (jobsRes.success) jobs = jobsRes.data;
-            if (productsRes.success) products = productsRes.data;
-            if (contactsRes.success) contacts = contactsRes.data;
-            if (navRes.success) navLinks = navRes.data;
-            
-            renderAll();
-        } catch (e) {
-            console.error(e);
-            document.getElementById('noticesList').innerHTML = '<div style="padding:1rem;text-align:center;">ডাটা লোড করতে সমস্যা। API URL চেক করুন।</div>';
-        }
-    }
-
-    function renderAll() {
-        renderNotices();
-        renderJobs();
-        renderProducts();
-        renderContacts();
-        renderSecondaryNav();
-        let btns = document.querySelectorAll('.admin-btn');
-        btns.forEach(btn => btn.style.display = isAdmin ? 'inline-flex' : 'none');
-    }
-
-    function renderNotices() {
-        let c = document.getElementById('noticesList');
-        c.innerHTML = notices.map(n => `<div class="notice-item"><div style="color:var(--gold-primary);font-weight:bold;">📢 ${escapeHtml(n.title)}</div><small>${n.date || ''}</small><p>${escapeHtml(n.description)}</p>${isAdmin ? `<div class="admin-icons"><button class="icon-btn edit" onclick="editNotice('${n.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('notice','${n.id}')"><i class="fas fa-trash"></i></button></div>` : ''}</div>`).join('') || '<div style="padding:1rem;text-align:center;">কোনো নোটিশ নেই</div>';
-    }
-
-    function renderJobs() {
-        let c = document.getElementById('jobsList');
-        c.innerHTML = jobs.map(j => `<div class="job-item"><h4 style="color:var(--gold-primary);">💼 ${escapeHtml(j.title)}</h4><div>${escapeHtml(j.company)} | ${j.location}</div><div>📅 শেষ: ${j.deadline}</div><p>${escapeHtml(j.details)}</p>${isAdmin ? `<div class="admin-icons"><button class="icon-btn edit" onclick="editJob('${j.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('job','${j.id}')"><i class="fas fa-trash"></i></button></div>` : ''}</div>`).join('') || '<div style="padding:1rem;text-align:center;">কোনো জব পোস্ট নেই</div>';
-    }
-
-    function renderProducts() {
-        let c = document.getElementById('productsList');
-        c.innerHTML = products.map(p => `<div class="product-item"><img class="product-img" src="${p.imageUrl || 'https://placehold.co/400x300/eab308/0a1128?text=Product'}" onerror="this.src='https://placehold.co/400x300/eab308/0a1128?text=Product'"><h4>${escapeHtml(p.name)}</h4><div style="color:var(--gold-primary);">${p.price}</div><p>${escapeHtml(p.description)}</p>${isAdmin ? `<div class="admin-icons"><button class="icon-btn edit" onclick="editProduct('${p.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button></div>` : ''}</div>`).join('') || '<div style="padding:1rem;text-align:center;">কোনো প্রোডাক্ট নেই</div>';
-    }
-
-    function renderContacts() {
-        document.getElementById('contactDisplay').innerHTML = `
-            <div class="contact-row"><span><i class="fas fa-envelope"></i> ইমেইল</span><a href="mailto:${contacts.email}" style="color:var(--gold-primary);">${contacts.email || ''}</a></div>
-            <div class="contact-row"><span><i class="fas fa-phone"></i> ফোন</span><span>${contacts.phone || ''}</span></div>
-            <div class="contact-row"><span><i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপ</span><a href="${contacts.whatsapp || ''}" target="_blank">লিংক</a></div>
-            <div class="contact-row"><span><i class="fab fa-facebook"></i> ফেসবুক</span><a href="${contacts.facebook || ''}" target="_blank">ভিজিট করুন</a></div>
-        `;
-    }
-
-    function renderSecondaryNav() {
-        let container = document.getElementById('secondaryNavLinks');
-        if (!navLinks || navLinks.length === 0) {
-            container.innerHTML = '<span style="color:#4b5563;">কোনো লিংক নেই। অ্যাডমিন লগইন করে যোগ করুন</span>';
-            return;
-        }
-        container.innerHTML = navLinks.map(l => `<a href="${l.url}" target="_blank" class="secondary-link"><i class="fas fa-link"></i> ${escapeHtml(l.text)}</a>`).join('');
-    }
-
-    function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, m => m === '&' ? '&amp;' : (m === '<' ? '&lt;' : '&gt;')); }
-
-    // CRUD অপারেশন
-    async function addNotice() { if(!isAdmin) return; let title=prompt('শিরোনাম'); if(title){ let date=prompt('তারিখ'); let desc=prompt('বর্ণনা'); let res=await callAPI('addNotice', {title, date, description:desc}); if(res.success){ showToast('নোটিশ যোগ হয়েছে'); loadAll(); } } }
-    async function editNotice(id) { let item=notices.find(n=>n.id==id); if(item){ let title=prompt('শিরোনাম',item.title); let date=prompt('তারিখ',item.date); let desc=prompt('বর্ণনা',item.description); let res=await callAPI('updateNotice', {id, title, date, description:desc}); if(res.success) loadAll(); } }
-    async function addJob() { if(!isAdmin) return; let title=prompt('পদবি'); if(title){ let company=prompt('কোম্পানি'); let loc=prompt('স্থান'); let deadline=prompt('শেষ তারিখ'); let details=prompt('বিস্তারিত'); let res=await callAPI('addJob', {title, company, location:loc, deadline, details}); if(res.success){ showToast('জব পোস্ট হয়েছে'); loadAll(); } } }
-    async function editJob(id) { let j=jobs.find(j=>j.id==id); if(j){ let title=prompt('পদবি',j.title); let company=prompt('কোম্পানি',j.company); let loc=prompt('স্থান',j.location); let deadline=prompt('শেষ তারিখ',j.deadline); let details=prompt('বিস্তারিত',j.details); let res=await callAPI('updateJob', {id, title, company, location:loc, deadline, details}); if(res.success) loadAll(); } }
-    async function addProduct() { if(!isAdmin) return; let name=prompt('পণ্যের নাম'); if(name){ let price=prompt('মূল্য'); let img=prompt('ছবির URL'); let desc=prompt('বর্ণনা'); let res=await callAPI('addProduct', {name, price, imageUrl:img, description:desc}); if(res.success){ showToast('প্রোডাক্ট যোগ হয়েছে'); loadAll(); } } }
-    async function editProduct(id) { let p=products.find(p=>p.id==id); if(p){ let name=prompt('নাম',p.name); let price=prompt('মূল্য',p.price); let img=prompt('ছবির URL',p.imageUrl); let desc=prompt('বর্ণনা',p.description); let res=await callAPI('updateProduct', {id, name, price, imageUrl:img, description:desc}); if(res.success) loadAll(); } }
-    async function deleteItem(type,id) { if(confirm('মুছতে চান?')){ let action = type==='notice'?'deleteNotice':(type==='job'?'deleteJob':'deleteProduct'); let res=await callAPI(action, {id}); if(res.success){ showToast('মুছে ফেলা হয়েছে'); loadAll(); } } }
-    async function editContacts() { if(!isAdmin) return; let email=prompt('ইমেইল',contacts.email); let phone=prompt('ফোন',contacts.phone); let wa=prompt('হোয়াটসঅ্যাপ লিংক',contacts.whatsapp); let fb=prompt('ফেসবুক লিংক',contacts.facebook); let res=await callAPI('updateContacts', {email, phone, whatsapp:wa, facebook:fb}); if(res.success){ showToast('কন্টাক্ট আপডেট'); loadAll(); } }
-    async function editNavLinks() { if(!isAdmin) return; let current = navLinks.map(l=>`${l.text}|${l.url}`).join(', '); let newLinks = prompt('লিংক এডিট করুন (টেক্সট|URL, কমা দিয়ে আলাদা)\nউদাহরণ: ওয়ারেন্টি|#warranty, সাপোর্ট|#support', current); if(newLinks){ let pairs = newLinks.split(',').map(s=>s.trim()).filter(s=>s); let newArr = []; for(let pair of pairs){ let [text,url] = pair.split('|'); if(text && url) newArr.push({id:Date.now()+Math.random(), text:text.trim(), url:url.trim()}); } if(newArr.length){ let res=await callAPI('updateNavLinks', {links: newArr}); if(res.success){ showToast('নেভ লিংক আপডেট হয়েছে'); loadAll(); } } } }
-
-    // অ্যাডমিন লগইন
-    async function login(username, password) {
-        let res = await callAPI('verifyAdmin', {username, password});
-        if(res.success){
-            isAdmin = true;
-            sessionToken = res.token;
-            localStorage.setItem('jtt_admin', 'true');
-            showToast('অ্যাডমিন লগইন সফল');
-            loadAll();
-            return true;
-        }
-        return false;
-    }
-
-    function loginModal() {
-        let div = document.createElement('div'); div.className = 'modal-overlay';
-        div.innerHTML = `<div class="modal-card"><h3 style="color:var(--gold-primary);">🔐 অ্যাডমিন লগইন</h3><input id="loginUser" placeholder="Username"><input id="loginPass" type="password" placeholder="Password"><div style="display:flex; gap:10px; margin-top:15px;"><button id="doLoginBtn" style="background:var(--gold-primary); border:none; padding:10px; border-radius:30px; flex:1;">লগইন</button><button id="closeLoginBtn" style="background:#334155; border:none; padding:10px; border-radius:30px; flex:1;">বন্ধ</button></div></div>`;
-        document.body.appendChild(div);
-        document.getElementById('doLoginBtn').onclick = async () => {
-            let u = document.getElementById('loginUser').value;
-            let p = document.getElementById('loginPass').value;
-            let success = await login(u, p);
-            if(!success) alert('ভুল তথ্য। admin / admin123');
-            div.remove();
-        };
-        document.getElementById('closeLoginBtn').onclick = () => div.remove();
-    }
-
-    function logoutAdmin() { isAdmin=false; sessionToken=null; localStorage.removeItem('jtt_admin'); loadAll(); showToast('লগ আউট হয়েছে'); }
-
-    // নেভিগেশন
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            let page = tab.dataset.page;
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(page+'Page').classList.add('active');
-            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+// ========== API কল ==========
+// ✅ FIX: mode:'no-cors' সরানো হয়েছে — এটাই login কাজ না করার মূল কারণ ছিল
+// GET ব্যবহার করা হচ্ছে কারণ Apps Script GET সবচেয়ে নির্ভরযোগ্য
+async function callAPI(action, data = {}) {
+    try {
+        const params = new URLSearchParams({ action, ...data });
+        // GET দিয়ে call করা হচ্ছে (POST CORS redirect issue এড়াতে)
+        const url = API_URL + '?' + params.toString();
+        const response = await fetch(url, {
+            method: 'GET',
+            redirect: 'follow'
         });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('API Error [' + action + ']:', error);
+        return { success: false, error: error.message };
+    }
+}
+
+// ========== সব ডাটা লোড ==========
+async function loadAll() {
+    try {
+        const [noticesRes, jobsRes, productsRes, contactsRes, navRes] = await Promise.all([
+            callAPI('getNotices'),
+            callAPI('getJobs'),
+            callAPI('getProducts'),
+            callAPI('getContacts'),
+            callAPI('getNavLinks')
+        ]);
+
+        notices  = (noticesRes.success  && noticesRes.data)  ? noticesRes.data  : [];
+        jobs     = (jobsRes.success     && jobsRes.data)     ? jobsRes.data     : [];
+        products = (productsRes.success && productsRes.data) ? productsRes.data : [];
+        contacts = (contactsRes.success && contactsRes.data) ? contactsRes.data : {};
+        navLinks = (navRes.success      && navRes.data)      ? navRes.data      : [];
+
+        renderAll();
+    } catch (e) {
+        console.error(e);
+        showToast('ডাটা লোড সমস্যা। API URL চেক করুন।', true);
+    }
+}
+
+// ========== রেন্ডার ফাংশন ==========
+function renderAll() {
+    renderNotices();
+    renderJobs();
+    renderProducts();
+    renderContacts();
+    renderSecondaryNav();
+    updateAdminUI();
+}
+
+function esc(str) {
+    if (!str) return '';
+    return str.toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderNotices() {
+    const c = document.getElementById('noticesList');
+    if (!notices.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো নোটিশ নেই</div>'; return; }
+    c.innerHTML = notices.map(n => `
+        <div class="notice-item">
+            <div style="color:var(--gold-primary);font-weight:bold;margin-bottom:4px;">📢 ${esc(n.title)}</div>
+            <small style="color:var(--text-dim);">${esc(n.date)}</small>
+            <p style="margin-top:8px;color:var(--text-dim);line-height:1.5;">${esc(n.description)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editNotice('${esc(n.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('notice','${esc(n.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderJobs() {
+    const c = document.getElementById('jobsList');
+    if (!jobs.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো জব পোস্ট নেই</div>'; return; }
+    c.innerHTML = jobs.map(j => `
+        <div class="job-item">
+            <h4 style="color:var(--gold-primary);margin-bottom:6px;">💼 ${esc(j.title)}</h4>
+            <div style="color:var(--text-dim);margin-bottom:4px;">${esc(j.company)} | ${esc(j.location)}</div>
+            <div style="font-size:0.85rem;margin-bottom:8px;">📅 শেষ: ${esc(j.deadline)}</div>
+            <p style="color:var(--text-dim);line-height:1.5;">${esc(j.details)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editJob('${esc(j.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('job','${esc(j.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderProducts() {
+    const c = document.getElementById('productsList');
+    if (!products.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো প্রোডাক্ট নেই</div>'; return; }
+    c.innerHTML = products.map(p => `
+        <div class="product-item">
+            <img class="product-img" src="${esc(p.imageUrl) || 'https://placehold.co/400x300/eab308/0a1128?text=Product'}"
+                 onerror="this.src='https://placehold.co/400x300/eab308/0a1128?text=Product'" alt="${esc(p.name)}">
+            <h4 style="margin-bottom:4px;">${esc(p.name)}</h4>
+            <div style="color:var(--gold-primary);font-weight:bold;margin-bottom:6px;">${esc(p.price)}</div>
+            <p style="color:var(--text-dim);line-height:1.5;">${esc(p.description)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editProduct('${esc(p.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('product','${esc(p.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderContacts() {
+    document.getElementById('contactDisplay').innerHTML = `
+        <div class="contact-row">
+            <span><i class="fas fa-envelope" style="color:var(--gold-primary);margin-right:8px;"></i>ইমেইল</span>
+            <a href="mailto:${esc(contacts.email)}">${esc(contacts.email) || '—'}</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fas fa-phone" style="color:var(--gold-primary);margin-right:8px;"></i>ফোন</span>
+            <a href="tel:${esc(contacts.phone)}">${esc(contacts.phone) || '—'}</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fab fa-whatsapp" style="color:#25d366;margin-right:8px;"></i>হোয়াটসঅ্যাপ</span>
+            <a href="${esc(contacts.whatsapp)}" target="_blank">মেসেজ করুন</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fab fa-facebook" style="color:#1877f2;margin-right:8px;"></i>ফেসবুক</span>
+            <a href="${esc(contacts.facebook)}" target="_blank">ভিজিট করুন</a>
+        </div>`;
+}
+
+function renderSecondaryNav() {
+    const container = document.getElementById('secondaryNavLinks');
+    if (!navLinks || !navLinks.length) {
+        container.innerHTML = `<span style="color:#4b5563;font-size:0.8rem;">অ্যাডমিন লগইন করে নেভ লিংক যোগ করুন</span>`;
+        return;
+    }
+    container.innerHTML = navLinks.map(l =>
+        `<a href="${esc(l.url)}" target="_blank" class="secondary-link"><i class="fas fa-link"></i> ${esc(l.text)}</a>`
+    ).join('');
+}
+
+function updateAdminUI() {
+    const adminBtns = document.querySelectorAll('.admin-btn');
+    adminBtns.forEach(btn => btn.style.display = isAdmin ? 'inline-flex' : 'none');
+    const fab = document.getElementById('floatingAdminBtn');
+    if (isAdmin) {
+        fab.classList.add('is-admin');
+        fab.title = 'লগ আউট করুন';
+        fab.innerHTML = '<i class="fas fa-sign-out-alt"></i>';
+    } else {
+        fab.classList.remove('is-admin');
+        fab.title = 'Admin Login';
+        fab.innerHTML = '<i class="fas fa-user-shield"></i>';
+    }
+}
+
+// ========== মডাল হেল্পার ==========
+function createModal(title, fields, onSubmit) {
+    const div = document.createElement('div');
+    div.className = 'modal-overlay';
+    div.innerHTML = `
+        <div class="modal-card">
+            <h3>${title}</h3>
+            ${fields.map(f => `
+                <label>${f.label}</label>
+                ${f.type === 'textarea'
+                    ? `<textarea id="mf_${f.key}" placeholder="${f.placeholder||''}" rows="3">${f.value||''}</textarea>`
+                    : `<input id="mf_${f.key}" type="${f.type||'text'}" placeholder="${f.placeholder||''}" value="${esc(f.value||'')}">`
+                }
+            `).join('')}
+            <div class="modal-btns">
+                <button class="btn-gold" id="modalSubmit">✓ সংরক্ষণ</button>
+                <button class="btn-gray" id="modalClose">✕ বন্ধ</button>
+            </div>
+        </div>`;
+    document.body.appendChild(div);
+    div.querySelector('#modalClose').onclick = () => div.remove();
+    div.querySelector('#modalSubmit').onclick = async () => {
+        const values = {};
+        fields.forEach(f => values[f.key] = document.getElementById('mf_' + f.key).value.trim());
+        div.querySelector('#modalSubmit').textContent = 'সংরক্ষণ হচ্ছে...';
+        div.querySelector('#modalSubmit').disabled = true;
+        await onSubmit(values);
+        div.remove();
+    };
+    // overlay click to close
+    div.addEventListener('click', e => { if (e.target === div) div.remove(); });
+}
+
+// ========== NOTICE CRUD ==========
+function addNotice() {
+    createModal('📢 নতুন নোটিশ', [
+        { key:'title', label:'শিরোনাম *', placeholder:'নোটিশের শিরোনাম' },
+        { key:'date',  label:'তারিখ',     type:'date' },
+        { key:'description', label:'বর্ণনা', type:'textarea', placeholder:'বিস্তারিত লিখুন...' }
+    ], async (v) => {
+        const res = await callAPI('addNotice', v);
+        if (res.success) { showToast('✅ নোটিশ যোগ হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
     });
+}
 
-    document.getElementById('addNoticeBtn')?.addEventListener('click', addNotice);
-    document.getElementById('addJobBtn')?.addEventListener('click', addJob);
-    document.getElementById('addProductBtn')?.addEventListener('click', addProduct);
-    document.getElementById('editContactBtn')?.addEventListener('click', editContacts);
-    document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logoutAdmin() : loginModal();
-    document.getElementById('mainCtaBtn')?.addEventListener('click', () => {
-        document.querySelector('.nav-tab[data-page="product"]').click();
-        showToast('🔌 আমাদের প্রোডাক্ট দেখুন');
+async function editNotice(id) {
+    const item = notices.find(n => n.id === id);
+    if (!item) return;
+    createModal('✏️ নোটিশ সম্পাদনা', [
+        { key:'title', label:'শিরোনাম', value:item.title },
+        { key:'date',  label:'তারিখ',   type:'date', value:item.date },
+        { key:'description', label:'বর্ণনা', type:'textarea', value:item.description }
+    ], async (v) => {
+        const res = await callAPI('updateNotice', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
     });
+}
 
-    if(localStorage.getItem('jtt_admin') === 'true') isAdmin = true;
-    loadAll();
+// ========== JOB CRUD ==========
+function addJob() {
+    createModal('💼 নতুন জব পোস্ট', [
+        { key:'title',    label:'পদবি *',       placeholder:'যেমন: ইলেক্ট্রিশিয়ান' },
+        { key:'company',  label:'কোম্পানি',      placeholder:'কোম্পানির নাম' },
+        { key:'location', label:'স্থান',         placeholder:'ঢাকা, চট্টগ্রাম...' },
+        { key:'deadline', label:'শেষ তারিখ',     type:'date' },
+        { key:'details',  label:'বিস্তারিত',     type:'textarea', placeholder:'যোগ্যতা, বেতন ইত্যাদি...' }
+    ], async (v) => {
+        const res = await callAPI('addJob', v);
+        if (res.success) { showToast('✅ জব পোস্ট হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
+    });
+}
 
-    window.editNotice = editNotice; window.editJob = editJob; window.editProduct = editProduct; window.deleteItem = deleteItem;
+async function editJob(id) {
+    const j = jobs.find(j => j.id === id);
+    if (!j) return;
+    createModal('✏️ জব সম্পাদনা', [
+        { key:'title',    label:'পদবি',        value:j.title },
+        { key:'company',  label:'কোম্পানি',    value:j.company },
+        { key:'location', label:'স্থান',       value:j.location },
+        { key:'deadline', label:'শেষ তারিখ',   type:'date', value:j.deadline },
+        { key:'details',  label:'বিস্তারিত',   type:'textarea', value:j.details }
+    ], async (v) => {
+        const res = await callAPI('updateJob', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== PRODUCT CRUD ==========
+function addProduct() {
+    createModal('🔌 নতুন প্রোডাক্ট', [
+        { key:'name',        label:'পণ্যের নাম *',  placeholder:'যেমন: LED বাল্ব 12W' },
+        { key:'price',       label:'মূল্য *',        placeholder:'যেমন: ৳ ২৫০' },
+        { key:'imageUrl',    label:'ছবির URL',       placeholder:'https://...' },
+        { key:'description', label:'বর্ণনা',         type:'textarea', placeholder:'পণ্যের বিবরণ...' }
+    ], async (v) => {
+        const res = await callAPI('addProduct', v);
+        if (res.success) { showToast('✅ প্রোডাক্ট যোগ হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
+    });
+}
+
+async function editProduct(id) {
+    const p = products.find(p => p.id === id);
+    if (!p) return;
+    createModal('✏️ প্রোডাক্ট সম্পাদনা', [
+        { key:'name',        label:'পণ্যের নাম',  value:p.name },
+        { key:'price',       label:'মূল্য',        value:p.price },
+        { key:'imageUrl',    label:'ছবির URL',      value:p.imageUrl },
+        { key:'description', label:'বর্ণনা',        type:'textarea', value:p.description }
+    ], async (v) => {
+        const res = await callAPI('updateProduct', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== DELETE ==========
+async function deleteItem(type, id) {
+    if (!confirm('এটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
+    const actionMap = { notice:'deleteNotice', job:'deleteJob', product:'deleteProduct' };
+    const res = await callAPI(actionMap[type], { id });
+    if (res.success) { showToast('🗑️ মুছে ফেলা হয়েছে'); await loadAll(); }
+    else showToast('❌ মুছতে সমস্যা', true);
+}
+
+// ========== CONTACTS EDIT ==========
+function editContacts() {
+    createModal('📞 কন্টাক্ট আপডেট', [
+        { key:'email',    label:'ইমেইল',           value:contacts.email,    placeholder:'info@example.com' },
+        { key:'phone',    label:'ফোন নম্বর',        value:contacts.phone,    placeholder:'+880-...' },
+        { key:'whatsapp', label:'হোয়াটসঅ্যাপ URL', value:contacts.whatsapp, placeholder:'https://wa.me/880...' },
+        { key:'facebook', label:'ফেসবুক URL',       value:contacts.facebook, placeholder:'https://facebook.com/...' }
+    ], async (v) => {
+        const res = await callAPI('updateContacts', v);
+        if (res.success) { showToast('✅ কন্টাক্ট আপডেট'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== NAV LINKS EDIT ==========
+function editNavLinks() {
+    const current = navLinks.map(l => l.text + '|' + l.url).join('\n');
+    createModal('🔗 নেভ লিংক এডিট', [
+        { key:'links', label:'লিংক লিস্ট (প্রতি লাইনে: টেক্সট|URL)', type:'textarea',
+          value: current, placeholder: 'ওয়ারেন্টি নীতি|#warranty\nসাপোর্ট|#support' }
+    ], async (v) => {
+        const pairs = v.links.split('\n').map(s => s.trim()).filter(s => s.includes('|'));
+        const arr = pairs.map((pair, i) => {
+            const [text, ...urlParts] = pair.split('|');
+            return { id: i + 1, text: text.trim(), url: urlParts.join('|').trim() };
+        });
+        const res = await callAPI('updateNavLinks', { links: JSON.stringify(arr) });
+        if (res.success) { showToast('✅ নেভ লিংক আপডেট'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== অ্যাডমিন লগইন ==========
+async function login(username, password) {
+    const res = await callAPI('verifyAdmin', { username, password });
+    if (res.success) {
+        isAdmin = true;
+        try { localStorage.setItem('jtt_admin_session', '1'); } catch(e) {}
+        showToast('🔓 অ্যাডমিন লগইন সফল');
+        renderAll();
+        return true;
+    }
+    return false;
+}
+
+function loginModal() {
+    const div = document.createElement('div');
+    div.className = 'modal-overlay';
+    div.innerHTML = `
+        <div class="modal-card">
+            <h3>🔐 অ্যাডমিন লগইন</h3>
+            <label>ইউজারনেম</label>
+            <input id="loginUser" placeholder="Username" autocomplete="username">
+            <label>পাসওয়ার্ড</label>
+            <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password">
+            <p id="loginErr" style="color:var(--danger);font-size:0.8rem;margin-top:8px;display:none;">❌ ভুল ইউজারনেম বা পাসওয়ার্ড</p>
+            <div class="modal-btns" style="margin-top:16px;">
+                <button class="btn-gold" id="doLoginBtn">লগইন</button>
+                <button class="btn-gray" id="closeLoginBtn">বন্ধ</button>
+            </div>
+        </div>`;
+    document.body.appendChild(div);
+
+    const doLogin = async () => {
+        const u = document.getElementById('loginUser').value.trim();
+        const p = document.getElementById('loginPass').value;
+        document.getElementById('doLoginBtn').textContent = 'যাচাই হচ্ছে...';
+        document.getElementById('doLoginBtn').disabled = true;
+        const success = await login(u, p);
+        if (success) { div.remove(); }
+        else {
+            document.getElementById('loginErr').style.display = 'block';
+            document.getElementById('doLoginBtn').textContent = 'লগইন';
+            document.getElementById('doLoginBtn').disabled = false;
+        }
+    };
+
+    document.getElementById('doLoginBtn').onclick = doLogin;
+    document.getElementById('closeLoginBtn').onclick = () => div.remove();
+    document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+    div.addEventListener('click', e => { if (e.target === div) div.remove(); });
+    setTimeout(() => document.getElementById('loginUser').focus(), 100);
+}
+
+function logoutAdmin() {
+    isAdmin = false;
+    try { localStorage.removeItem('jtt_admin_session'); } catch(e) {}
+    showToast('🔒 লগ আউট হয়েছে');
+    renderAll();
+}
+
+// ========== ইভেন্ট লিসেনার ==========
+document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(tab.dataset.page + 'Page').classList.add('active');
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+    });
+});
+
+document.getElementById('addNoticeBtn').addEventListener('click', addNotice);
+document.getElementById('addJobBtn').addEventListener('click', addJob);
+document.getElementById('addProductBtn').addEventListener('click', addProduct);
+document.getElementById('editContactBtn').addEventListener('click', editContacts);
+document.getElementById('mainCtaBtn').addEventListener('click', () => {
+    document.querySelector('.nav-tab[data-page="product"]').click();
+    showToast('🔌 আমাদের প্রোডাক্ট দেখুন');
+});
+document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logoutAdmin() : loginModal();
+
+// সেশন রিস্টোর
+try { if (localStorage.getItem('jtt_admin_session') === '1') isAdmin = true; } catch(e) {}
+
+// গ্লোবাল ফাংশন (inline onclick এর জন্য)
+window.editNotice  = editNotice;
+window.editJob     = editJob;
+window.editProduct = editProduct;
+window.deleteItem  = deleteItem;
+window.editNavLinks = editNavLinks;
+
+// ডাটা লোড শুরু
+loadAll();
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1120">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>JTT Bright Electric | Premium Electrical Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+        :root {
+            --dark-deep: #0a0f1c;
+            --dark-primary: #0f172a;
+            --dark-card: rgba(17,24,39,0.75);
+            --gold-primary: #eab308;
+            --gold-gradient: linear-gradient(135deg,#fde047 0%,#eab308 50%,#ca8a04 100%);
+            --gold-glow: rgba(234,179,8,0.4);
+            --text-light: #f3f4f6;
+            --text-dim: #9ca3af;
+            --border-light: rgba(255,255,255,0.08);
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        body {
+            background: var(--dark-deep);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content:"";
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background-image:
+                linear-gradient(rgba(234,179,8,0.03) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(234,179,8,0.03) 1px,transparent 1px);
+            background-size:50px 50px;
+            pointer-events:none; z-index:0;
+        }
+
+        .container { max-width:600px; margin:0 auto; padding:16px 16px 90px; position:relative; z-index:1; }
+
+        .glass-card {
+            background: var(--dark-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-light);
+            border-radius: 32px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(234,179,8,0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover { border-color:rgba(234,179,8,0.3); transform:translateY(-2px); }
+
+        .cta-premium {
+            display:inline-flex; align-items:center; justify-content:center; gap:12px;
+            background: var(--gold-gradient);
+            border:none; padding:16px 32px; font-size:1.1rem; font-weight:700;
+            color:#0a0f1c; border-radius:60px; cursor:pointer;
+            transition:all 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+            box-shadow:0 4px 15px rgba(234,179,8,0.3);
+            width:100%; max-width:280px; margin:0 auto; letter-spacing:0.5px;
+        }
+        .cta-premium i { font-size:1.2rem; transition:transform 0.35s ease; }
+        .cta-premium:hover { transform:scale(1.05); box-shadow:0 0 25px var(--gold-glow),0 8px 25px rgba(234,179,8,0.4); }
+        .cta-premium:hover i.fa-arrow-right { transform:translateX(5px); }
+        .cta-premium:active { transform:scale(0.98); }
+
+        .hero-section { text-align:center; padding:1.5rem 0 1rem; }
+        .hero-icon { font-size:3rem; background:linear-gradient(135deg,#fde047,#eab308); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-title { font-size:1.8rem; font-weight:800; margin:0.5rem 0; background:linear-gradient(135deg,#ffffff,#eab308); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-subtitle { color:var(--text-dim); font-size:0.9rem; margin-bottom:1.5rem; }
+
+        .secondary-nav {
+            background:rgba(15,23,42,0.8); backdrop-filter:blur(12px);
+            border-radius:50px; padding:8px 16px; margin-bottom:20px;
+            display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+            border:1px solid var(--border-light);
+        }
+        .secondary-link {
+            background:rgba(30,41,59,0.7); color:var(--text-dim);
+            text-decoration:none; font-size:0.75rem; padding:6px 14px;
+            border-radius:40px; transition:all 0.2s; white-space:nowrap;
+        }
+        .secondary-link:hover { background:var(--gold-primary); color:#0a0f1c; }
+
+        .bottom-nav {
+            position:fixed; bottom:0; left:0; right:0;
+            background:rgba(15,23,42,0.97); backdrop-filter:blur(20px);
+            border-top:1px solid rgba(234,179,8,0.2);
+            display:flex; justify-content:space-around;
+            padding:10px 12px 22px; z-index:100;
+        }
+        .nav-tab {
+            display:flex; flex-direction:column; align-items:center; gap:4px;
+            background:none; border:none; color:var(--text-dim);
+            font-size:0.65rem; cursor:pointer; padding:6px 14px;
+            border-radius:30px; transition:all 0.2s;
+        }
+        .nav-tab i { font-size:1.3rem; }
+        .nav-tab.active { color:var(--gold-primary); background:rgba(234,179,8,0.12); }
+
+        .page { display:none; animation:fadeSlide 0.35s ease-out; }
+        .page.active { display:block; }
+        @keyframes fadeSlide { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+        .notice-item, .job-item, .product-item {
+            background:rgba(15,23,42,0.6); backdrop-filter:blur(8px);
+            border-radius:24px; padding:1rem; margin-bottom:12px;
+            border:1px solid var(--border-light);
+        }
+        .product-img { width:100%; height:140px; object-fit:cover; border-radius:18px; margin-bottom:10px; background:#1e293b; }
+
+        .section-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:10px; }
+        .section-title { font-size:1.3rem; font-weight:700; border-left:4px solid var(--gold-primary); padding-left:12px; }
+
+        .admin-btn {
+            background:var(--gold-gradient); border:none;
+            color:#0a0f1c; font-weight:600; padding:8px 18px;
+            border-radius:40px; font-size:0.75rem; cursor:pointer;
+            display:none; /* JS দিয়ে দেখানো হবে */
+        }
+        .admin-icons { display:flex; justify-content:flex-end; gap:15px; margin-top:10px; }
+        .icon-btn { background:none; border:none; color:var(--text-dim); font-size:1rem; cursor:pointer; padding:6px; }
+        .icon-btn.del { color:var(--danger); }
+        .icon-btn.edit { color:var(--gold-primary); }
+
+        .contact-row {
+            background:rgba(15,23,42,0.6); padding:12px; border-radius:20px;
+            margin-bottom:10px; display:flex; justify-content:space-between;
+            align-items:center; flex-wrap:wrap; gap:8px;
+        }
+        .contact-row a { color:var(--gold-primary); text-decoration:none; }
+
+        .floating-admin {
+            position:fixed; bottom:85px; right:16px;
+            background:var(--gold-gradient);
+            width:52px; height:52px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 4px 20px rgba(234,179,8,0.5);
+            cursor:pointer; z-index:150; border:none;
+            font-size:1.3rem; color:#0a0f1c;
+            transition:transform 0.2s;
+        }
+        .floating-admin:hover { transform:scale(1.1); }
+        .floating-admin.is-admin { background:linear-gradient(135deg,#ef4444,#dc2626); }
+
+        /* মডাল */
+        .modal-overlay {
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.9); backdrop-filter:blur(8px);
+            display:flex; align-items:center; justify-content:center;
+            z-index:1000; padding:20px;
+        }
+        .modal-card {
+            background:#111827; border-radius:32px; padding:1.8rem;
+            width:100%; max-width:360px; border-top:3px solid var(--gold-primary);
+            max-height:90vh; overflow-y:auto;
+        }
+        .modal-card h3 { color:var(--gold-primary); margin-bottom:1rem; }
+        .modal-card label { display:block; color:var(--text-dim); font-size:0.8rem; margin:12px 0 4px; }
+        .modal-card input, .modal-card textarea {
+            width:100%; padding:12px; background:#1e293b;
+            border:1px solid #334155; border-radius:16px; color:white;
+            font-size:0.9rem; outline:none; transition:border-color 0.2s;
+        }
+        .modal-card input:focus, .modal-card textarea:focus { border-color:var(--gold-primary); }
+        .modal-card textarea { resize:vertical; min-height:80px; }
+        .modal-btns { display:flex; gap:10px; margin-top:16px; }
+        .btn-gold { background:var(--gold-gradient); border:none; padding:12px; border-radius:30px; flex:1; font-weight:600; color:#0a0f1c; cursor:pointer; font-size:0.9rem; }
+        .btn-gray { background:#334155; border:none; padding:12px; border-radius:30px; flex:1; color:white; cursor:pointer; font-size:0.9rem; }
+
+        /* লোডিং স্পিনার */
+        .spinner {
+            width:40px; height:40px; border:3px solid rgba(234,179,8,0.2);
+            border-top-color:var(--gold-primary); border-radius:50%;
+            animation:spin 0.8s linear infinite; margin:2rem auto;
+        }
+        @keyframes spin { to { transform:rotate(360deg); } }
+
+        /* টোস্ট */
+        .toast {
+            position:fixed; bottom:100px; left:20px; right:20px;
+            background:var(--success); color:white; text-align:center;
+            padding:12px 20px; border-radius:50px; z-index:500;
+            font-weight:500; animation:toastAnim 2.5s ease forwards;
+            max-width:400px; margin:0 auto;
+        }
+        .toast.error { background:var(--danger); }
+        @keyframes toastAnim {
+            0%   { opacity:0; transform:translateY(10px); }
+            15%  { opacity:1; transform:translateY(0); }
+            75%  { opacity:1; }
+            100% { opacity:0; transform:translateY(-5px); }
+        }
+
+        /* এডমিন ব্যাজ */
+        .admin-badge {
+            display:inline-flex; align-items:center; gap:6px;
+            background:rgba(234,179,8,0.15); border:1px solid rgba(234,179,8,0.3);
+            color:var(--gold-primary); padding:4px 12px; border-radius:30px;
+            font-size:0.75rem; margin-left:10px;
+        }
+
+        footer { text-align:center; padding:1rem; color:var(--text-dim); font-size:0.7rem; margin-top:1rem; }
+
+        @media (max-width:480px) {
+            .cta-premium { padding:14px 24px; font-size:1rem; max-width:240px; }
+            .hero-title { font-size:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero-section">
+        <div class="hero-icon">⚡</div>
+        <h1 class="hero-title">JTT BRIGHT ELECTRIC</h1>
+        <p class="hero-subtitle">Premium Electrical Solutions for Modern Living</p>
+        <button class="cta-premium" id="mainCtaBtn">
+            <i class="fas fa-bolt"></i> এক্সপ্লোর করুন <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="secondary-nav" id="secondaryNavLinks">
+        <div class="spinner" style="width:20px;height:20px;border-width:2px;"></div>
+    </div>
+
+    <!-- হোম পেজ -->
+    <div id="homePage" class="page active">
+        <div class="glass-card">
+            <h2 style="color:var(--gold-primary);margin-bottom:12px;">✨ স্বাগতম</h2>
+            <p style="color:var(--text-dim);line-height:1.6;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। আমরা সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন প্রদান করি।</p>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 500+ প্রকল্প</span>
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 8+ বছর</span>
+                <span style="background:rgba(234,179,8,0.15);padding:6px 14px;border-radius:30px;">✅ 24/7 সাপোর্ট</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- নোটিশ পেজ -->
+    <div id="noticePage" class="page">
+        <div class="glass-card">
+            <div class="section-header">
+                <h3 class="section-title">📢 নোটিশ</h3>
+                <button id="addNoticeBtn" class="admin-btn">+ যোগান</button>
+            </div>
+            <div id="noticesList"><div class="spinner"></div></div>
+        </div>
+    </div>
+
+    <!-- জব পেজ -->
+    <div id="jobPage" class="page">
+        <div class="glass-card">
+            <div class="section-header">
+                <h3 class="section-title">💼 জব সার্কুলার</h3>
+                <button id="addJobBtn" class="admin-btn">+ পোস্ট</button>
+            </div>
+            <div id="jobsList"><div class="spinner"></div></div>
+        </div>
+    </div>
+
+    <!-- প্রোডাক্ট পেজ -->
+    <div id="productPage" class="page">
+        <div class="glass-card">
+            <div class="section-header">
+                <h3 class="section-title">🔌 প্রোডাক্ট</h3>
+                <button id="addProductBtn" class="admin-btn">+ প্রোডাক্ট</button>
+            </div>
+            <div id="productsList"><div class="spinner"></div></div>
+        </div>
+    </div>
+
+    <!-- কন্টাক্ট পেজ -->
+    <div id="contactPage" class="page">
+        <div class="glass-card">
+            <div class="section-header">
+                <h3 class="section-title">📞 যোগাযোগ</h3>
+                <button id="editContactBtn" class="admin-btn"><i class="fas fa-edit"></i> এডিট</button>
+            </div>
+            <div id="contactDisplay"><div class="spinner"></div></div>
+        </div>
+    </div>
+
+    <footer>⚡ Google Sheets Powered | ডাটা স্থায়ী সংরক্ষিত</footer>
+</div>
+
+<!-- বটম নেভ -->
+<div class="bottom-nav">
+    <button class="nav-tab active" data-page="home"><i class="fas fa-home"></i><span>হোম</span></button>
+    <button class="nav-tab" data-page="notice"><i class="fas fa-bullhorn"></i><span>নোটিশ</span></button>
+    <button class="nav-tab" data-page="job"><i class="fas fa-briefcase"></i><span>জব</span></button>
+    <button class="nav-tab" data-page="product"><i class="fas fa-plug"></i><span>প্রোডাক্ট</span></button>
+    <button class="nav-tab" data-page="contact"><i class="fas fa-headset"></i><span>কন্টাক্ট</span></button>
+</div>
+
+<!-- ফ্লোটিং অ্যাডমিন বাটন -->
+<button class="floating-admin" id="floatingAdminBtn" title="Admin Panel">
+    <i class="fas fa-user-shield"></i>
+</button>
+
+<script>
+// ========== কনফিগারেশন ==========
+// 🔴 আপনার Google Apps Script Web App URL এখানে বসান 🔴
+const API_URL = 'https://script.google.com/macros/s/AKfycbxaFGPmugUJSriUEAd1m1mXJChmj1WdsJILO5EdYQ1ZIeIf7rpwcESlh17svOI1SVvD/exec';
+
+let isAdmin = false;
+let notices = [], jobs = [], products = [], contacts = {}, navLinks = [];
+
+// ========== টোস্ট ==========
+function showToast(msg, isError = false) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const t = document.createElement('div');
+    t.className = 'toast' + (isError ? ' error' : '');
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2600);
+}
+
+// ========== API কল ==========
+// ✅ FIX: mode:'no-cors' সরানো হয়েছে — এটাই login কাজ না করার মূল কারণ ছিল
+// GET ব্যবহার করা হচ্ছে কারণ Apps Script GET সবচেয়ে নির্ভরযোগ্য
+async function callAPI(action, data = {}) {
+    try {
+        const params = new URLSearchParams({ action, ...data });
+        // GET দিয়ে call করা হচ্ছে (POST CORS redirect issue এড়াতে)
+        const url = API_URL + '?' + params.toString();
+        const response = await fetch(url, {
+            method: 'GET',
+            redirect: 'follow'
+        });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('API Error [' + action + ']:', error);
+        return { success: false, error: error.message };
+    }
+}
+
+// ========== সব ডাটা লোড ==========
+async function loadAll() {
+    try {
+        const [noticesRes, jobsRes, productsRes, contactsRes, navRes] = await Promise.all([
+            callAPI('getNotices'),
+            callAPI('getJobs'),
+            callAPI('getProducts'),
+            callAPI('getContacts'),
+            callAPI('getNavLinks')
+        ]);
+
+        notices  = (noticesRes.success  && noticesRes.data)  ? noticesRes.data  : [];
+        jobs     = (jobsRes.success     && jobsRes.data)     ? jobsRes.data     : [];
+        products = (productsRes.success && productsRes.data) ? productsRes.data : [];
+        contacts = (contactsRes.success && contactsRes.data) ? contactsRes.data : {};
+        navLinks = (navRes.success      && navRes.data)      ? navRes.data      : [];
+
+        renderAll();
+    } catch (e) {
+        console.error(e);
+        showToast('ডাটা লোড সমস্যা। API URL চেক করুন।', true);
+    }
+}
+
+// ========== রেন্ডার ফাংশন ==========
+function renderAll() {
+    renderNotices();
+    renderJobs();
+    renderProducts();
+    renderContacts();
+    renderSecondaryNav();
+    updateAdminUI();
+}
+
+function esc(str) {
+    if (!str) return '';
+    return str.toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderNotices() {
+    const c = document.getElementById('noticesList');
+    if (!notices.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো নোটিশ নেই</div>'; return; }
+    c.innerHTML = notices.map(n => `
+        <div class="notice-item">
+            <div style="color:var(--gold-primary);font-weight:bold;margin-bottom:4px;">📢 ${esc(n.title)}</div>
+            <small style="color:var(--text-dim);">${esc(n.date)}</small>
+            <p style="margin-top:8px;color:var(--text-dim);line-height:1.5;">${esc(n.description)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editNotice('${esc(n.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('notice','${esc(n.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderJobs() {
+    const c = document.getElementById('jobsList');
+    if (!jobs.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো জব পোস্ট নেই</div>'; return; }
+    c.innerHTML = jobs.map(j => `
+        <div class="job-item">
+            <h4 style="color:var(--gold-primary);margin-bottom:6px;">💼 ${esc(j.title)}</h4>
+            <div style="color:var(--text-dim);margin-bottom:4px;">${esc(j.company)} | ${esc(j.location)}</div>
+            <div style="font-size:0.85rem;margin-bottom:8px;">📅 শেষ: ${esc(j.deadline)}</div>
+            <p style="color:var(--text-dim);line-height:1.5;">${esc(j.details)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editJob('${esc(j.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('job','${esc(j.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderProducts() {
+    const c = document.getElementById('productsList');
+    if (!products.length) { c.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-dim);">কোনো প্রোডাক্ট নেই</div>'; return; }
+    c.innerHTML = products.map(p => `
+        <div class="product-item">
+            <img class="product-img" src="${esc(p.imageUrl) || 'https://placehold.co/400x300/eab308/0a1128?text=Product'}"
+                 onerror="this.src='https://placehold.co/400x300/eab308/0a1128?text=Product'" alt="${esc(p.name)}">
+            <h4 style="margin-bottom:4px;">${esc(p.name)}</h4>
+            <div style="color:var(--gold-primary);font-weight:bold;margin-bottom:6px;">${esc(p.price)}</div>
+            <p style="color:var(--text-dim);line-height:1.5;">${esc(p.description)}</p>
+            ${isAdmin ? `<div class="admin-icons">
+                <button class="icon-btn edit" onclick="editProduct('${esc(p.id)}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('product','${esc(p.id)}')"><i class="fas fa-trash"></i></button>
+            </div>` : ''}
+        </div>`).join('');
+}
+
+function renderContacts() {
+    document.getElementById('contactDisplay').innerHTML = `
+        <div class="contact-row">
+            <span><i class="fas fa-envelope" style="color:var(--gold-primary);margin-right:8px;"></i>ইমেইল</span>
+            <a href="mailto:${esc(contacts.email)}">${esc(contacts.email) || '—'}</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fas fa-phone" style="color:var(--gold-primary);margin-right:8px;"></i>ফোন</span>
+            <a href="tel:${esc(contacts.phone)}">${esc(contacts.phone) || '—'}</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fab fa-whatsapp" style="color:#25d366;margin-right:8px;"></i>হোয়াটসঅ্যাপ</span>
+            <a href="${esc(contacts.whatsapp)}" target="_blank">মেসেজ করুন</a>
+        </div>
+        <div class="contact-row">
+            <span><i class="fab fa-facebook" style="color:#1877f2;margin-right:8px;"></i>ফেসবুক</span>
+            <a href="${esc(contacts.facebook)}" target="_blank">ভিজিট করুন</a>
+        </div>`;
+}
+
+function renderSecondaryNav() {
+    const container = document.getElementById('secondaryNavLinks');
+    if (!navLinks || !navLinks.length) {
+        container.innerHTML = `<span style="color:#4b5563;font-size:0.8rem;">অ্যাডমিন লগইন করে নেভ লিংক যোগ করুন</span>`;
+        return;
+    }
+    container.innerHTML = navLinks.map(l =>
+        `<a href="${esc(l.url)}" target="_blank" class="secondary-link"><i class="fas fa-link"></i> ${esc(l.text)}</a>`
+    ).join('');
+}
+
+function updateAdminUI() {
+    const adminBtns = document.querySelectorAll('.admin-btn');
+    adminBtns.forEach(btn => btn.style.display = isAdmin ? 'inline-flex' : 'none');
+    const fab = document.getElementById('floatingAdminBtn');
+    if (isAdmin) {
+        fab.classList.add('is-admin');
+        fab.title = 'লগ আউট করুন';
+        fab.innerHTML = '<i class="fas fa-sign-out-alt"></i>';
+    } else {
+        fab.classList.remove('is-admin');
+        fab.title = 'Admin Login';
+        fab.innerHTML = '<i class="fas fa-user-shield"></i>';
+    }
+}
+
+// ========== মডাল হেল্পার ==========
+function createModal(title, fields, onSubmit) {
+    const div = document.createElement('div');
+    div.className = 'modal-overlay';
+    div.innerHTML = `
+        <div class="modal-card">
+            <h3>${title}</h3>
+            ${fields.map(f => `
+                <label>${f.label}</label>
+                ${f.type === 'textarea'
+                    ? `<textarea id="mf_${f.key}" placeholder="${f.placeholder||''}" rows="3">${f.value||''}</textarea>`
+                    : `<input id="mf_${f.key}" type="${f.type||'text'}" placeholder="${f.placeholder||''}" value="${esc(f.value||'')}">`
+                }
+            `).join('')}
+            <div class="modal-btns">
+                <button class="btn-gold" id="modalSubmit">✓ সংরক্ষণ</button>
+                <button class="btn-gray" id="modalClose">✕ বন্ধ</button>
+            </div>
+        </div>`;
+    document.body.appendChild(div);
+    div.querySelector('#modalClose').onclick = () => div.remove();
+    div.querySelector('#modalSubmit').onclick = async () => {
+        const values = {};
+        fields.forEach(f => values[f.key] = document.getElementById('mf_' + f.key).value.trim());
+        div.querySelector('#modalSubmit').textContent = 'সংরক্ষণ হচ্ছে...';
+        div.querySelector('#modalSubmit').disabled = true;
+        await onSubmit(values);
+        div.remove();
+    };
+    // overlay click to close
+    div.addEventListener('click', e => { if (e.target === div) div.remove(); });
+}
+
+// ========== NOTICE CRUD ==========
+function addNotice() {
+    createModal('📢 নতুন নোটিশ', [
+        { key:'title', label:'শিরোনাম *', placeholder:'নোটিশের শিরোনাম' },
+        { key:'date',  label:'তারিখ',     type:'date' },
+        { key:'description', label:'বর্ণনা', type:'textarea', placeholder:'বিস্তারিত লিখুন...' }
+    ], async (v) => {
+        const res = await callAPI('addNotice', v);
+        if (res.success) { showToast('✅ নোটিশ যোগ হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
+    });
+}
+
+async function editNotice(id) {
+    const item = notices.find(n => n.id === id);
+    if (!item) return;
+    createModal('✏️ নোটিশ সম্পাদনা', [
+        { key:'title', label:'শিরোনাম', value:item.title },
+        { key:'date',  label:'তারিখ',   type:'date', value:item.date },
+        { key:'description', label:'বর্ণনা', type:'textarea', value:item.description }
+    ], async (v) => {
+        const res = await callAPI('updateNotice', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== JOB CRUD ==========
+function addJob() {
+    createModal('💼 নতুন জব পোস্ট', [
+        { key:'title',    label:'পদবি *',       placeholder:'যেমন: ইলেক্ট্রিশিয়ান' },
+        { key:'company',  label:'কোম্পানি',      placeholder:'কোম্পানির নাম' },
+        { key:'location', label:'স্থান',         placeholder:'ঢাকা, চট্টগ্রাম...' },
+        { key:'deadline', label:'শেষ তারিখ',     type:'date' },
+        { key:'details',  label:'বিস্তারিত',     type:'textarea', placeholder:'যোগ্যতা, বেতন ইত্যাদি...' }
+    ], async (v) => {
+        const res = await callAPI('addJob', v);
+        if (res.success) { showToast('✅ জব পোস্ট হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
+    });
+}
+
+async function editJob(id) {
+    const j = jobs.find(j => j.id === id);
+    if (!j) return;
+    createModal('✏️ জব সম্পাদনা', [
+        { key:'title',    label:'পদবি',        value:j.title },
+        { key:'company',  label:'কোম্পানি',    value:j.company },
+        { key:'location', label:'স্থান',       value:j.location },
+        { key:'deadline', label:'শেষ তারিখ',   type:'date', value:j.deadline },
+        { key:'details',  label:'বিস্তারিত',   type:'textarea', value:j.details }
+    ], async (v) => {
+        const res = await callAPI('updateJob', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== PRODUCT CRUD ==========
+function addProduct() {
+    createModal('🔌 নতুন প্রোডাক্ট', [
+        { key:'name',        label:'পণ্যের নাম *',  placeholder:'যেমন: LED বাল্ব 12W' },
+        { key:'price',       label:'মূল্য *',        placeholder:'যেমন: ৳ ২৫০' },
+        { key:'imageUrl',    label:'ছবির URL',       placeholder:'https://...' },
+        { key:'description', label:'বর্ণনা',         type:'textarea', placeholder:'পণ্যের বিবরণ...' }
+    ], async (v) => {
+        const res = await callAPI('addProduct', v);
+        if (res.success) { showToast('✅ প্রোডাক্ট যোগ হয়েছে'); await loadAll(); }
+        else showToast('❌ সমস্যা হয়েছে', true);
+    });
+}
+
+async function editProduct(id) {
+    const p = products.find(p => p.id === id);
+    if (!p) return;
+    createModal('✏️ প্রোডাক্ট সম্পাদনা', [
+        { key:'name',        label:'পণ্যের নাম',  value:p.name },
+        { key:'price',       label:'মূল্য',        value:p.price },
+        { key:'imageUrl',    label:'ছবির URL',      value:p.imageUrl },
+        { key:'description', label:'বর্ণনা',        type:'textarea', value:p.description }
+    ], async (v) => {
+        const res = await callAPI('updateProduct', { id, ...v });
+        if (res.success) { showToast('✅ আপডেট হয়েছে'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== DELETE ==========
+async function deleteItem(type, id) {
+    if (!confirm('এটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
+    const actionMap = { notice:'deleteNotice', job:'deleteJob', product:'deleteProduct' };
+    const res = await callAPI(actionMap[type], { id });
+    if (res.success) { showToast('🗑️ মুছে ফেলা হয়েছে'); await loadAll(); }
+    else showToast('❌ মুছতে সমস্যা', true);
+}
+
+// ========== CONTACTS EDIT ==========
+function editContacts() {
+    createModal('📞 কন্টাক্ট আপডেট', [
+        { key:'email',    label:'ইমেইল',           value:contacts.email,    placeholder:'info@example.com' },
+        { key:'phone',    label:'ফোন নম্বর',        value:contacts.phone,    placeholder:'+880-...' },
+        { key:'whatsapp', label:'হোয়াটসঅ্যাপ URL', value:contacts.whatsapp, placeholder:'https://wa.me/880...' },
+        { key:'facebook', label:'ফেসবুক URL',       value:contacts.facebook, placeholder:'https://facebook.com/...' }
+    ], async (v) => {
+        const res = await callAPI('updateContacts', v);
+        if (res.success) { showToast('✅ কন্টাক্ট আপডেট'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== NAV LINKS EDIT ==========
+function editNavLinks() {
+    const current = navLinks.map(l => l.text + '|' + l.url).join('\n');
+    createModal('🔗 নেভ লিংক এডিট', [
+        { key:'links', label:'লিংক লিস্ট (প্রতি লাইনে: টেক্সট|URL)', type:'textarea',
+          value: current, placeholder: 'ওয়ারেন্টি নীতি|#warranty\nসাপোর্ট|#support' }
+    ], async (v) => {
+        const pairs = v.links.split('\n').map(s => s.trim()).filter(s => s.includes('|'));
+        const arr = pairs.map((pair, i) => {
+            const [text, ...urlParts] = pair.split('|');
+            return { id: i + 1, text: text.trim(), url: urlParts.join('|').trim() };
+        });
+        const res = await callAPI('updateNavLinks', { links: JSON.stringify(arr) });
+        if (res.success) { showToast('✅ নেভ লিংক আপডেট'); await loadAll(); }
+        else showToast('❌ আপডেট ব্যর্থ', true);
+    });
+}
+
+// ========== অ্যাডমিন লগইন ==========
+async function login(username, password) {
+    const res = await callAPI('verifyAdmin', { username, password });
+    if (res.success) {
+        isAdmin = true;
+        try { localStorage.setItem('jtt_admin_session', '1'); } catch(e) {}
+        showToast('🔓 অ্যাডমিন লগইন সফল');
+        renderAll();
+        return true;
+    }
+    return false;
+}
+
+function loginModal() {
+    const div = document.createElement('div');
+    div.className = 'modal-overlay';
+    div.innerHTML = `
+        <div class="modal-card">
+            <h3>🔐 অ্যাডমিন লগইন</h3>
+            <label>ইউজারনেম</label>
+            <input id="loginUser" placeholder="Username" autocomplete="username">
+            <label>পাসওয়ার্ড</label>
+            <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password">
+            <p id="loginErr" style="color:var(--danger);font-size:0.8rem;margin-top:8px;display:none;">❌ ভুল ইউজারনেম বা পাসওয়ার্ড</p>
+            <div class="modal-btns" style="margin-top:16px;">
+                <button class="btn-gold" id="doLoginBtn">লগইন</button>
+                <button class="btn-gray" id="closeLoginBtn">বন্ধ</button>
+            </div>
+        </div>`;
+    document.body.appendChild(div);
+
+    const doLogin = async () => {
+        const u = document.getElementById('loginUser').value.trim();
+        const p = document.getElementById('loginPass').value;
+        document.getElementById('doLoginBtn').textContent = 'যাচাই হচ্ছে...';
+        document.getElementById('doLoginBtn').disabled = true;
+        const success = await login(u, p);
+        if (success) { div.remove(); }
+        else {
+            document.getElementById('loginErr').style.display = 'block';
+            document.getElementById('doLoginBtn').textContent = 'লগইন';
+            document.getElementById('doLoginBtn').disabled = false;
+        }
+    };
+
+    document.getElementById('doLoginBtn').onclick = doLogin;
+    document.getElementById('closeLoginBtn').onclick = () => div.remove();
+    document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+    div.addEventListener('click', e => { if (e.target === div) div.remove(); });
+    setTimeout(() => document.getElementById('loginUser').focus(), 100);
+}
+
+function logoutAdmin() {
+    isAdmin = false;
+    try { localStorage.removeItem('jtt_admin_session'); } catch(e) {}
+    showToast('🔒 লগ আউট হয়েছে');
+    renderAll();
+}
+
+// ========== ইভেন্ট লিসেনার ==========
+document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(tab.dataset.page + 'Page').classList.add('active');
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+    });
+});
+
+document.getElementById('addNoticeBtn').addEventListener('click', addNotice);
+document.getElementById('addJobBtn').addEventListener('click', addJob);
+document.getElementById('addProductBtn').addEventListener('click', addProduct);
+document.getElementById('editContactBtn').addEventListener('click', editContacts);
+document.getElementById('mainCtaBtn').addEventListener('click', () => {
+    document.querySelector('.nav-tab[data-page="product"]').click();
+    showToast('🔌 আমাদের প্রোডাক্ট দেখুন');
+});
+document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logoutAdmin() : loginModal();
+
+// সেশন রিস্টোর
+try { if (localStorage.getItem('jtt_admin_session') === '1') isAdmin = true; } catch(e) {}
+
+// গ্লোবাল ফাংশন (inline onclick এর জন্য)
+window.editNotice  = editNotice;
+window.editJob     = editJob;
+window.editProduct = editProduct;
+window.deleteItem  = deleteItem;
+window.editNavLinks = editNavLinks;
+
+// ডাটা লোড শুরু
+loadAll();
 </script>
 </body>
 </html>
