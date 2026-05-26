@@ -848,14 +848,10 @@
         if(!isAdmin) return;
         showModal('📞 কন্টাক্ট তথ্য আপডেট', '📱', [
             { name: 'email', label: 'ইমেইল', type: 'text', value: contacts.email },
-           <span> <h3>> Founder & C.E.O <h3>
+
             { name: 'phone', label: 'ফোন নম্বর', type: 'text', value: contacts.phone },
             { name: 'whatsapp', label: 'হোয়াটসঅ্যাপ লিংক', type: 'text', value: contacts.whatsapp },
-          </span>
-           <span> <h3>> A.S.M <h3>
-            { name: 'phone', label: 'ফোন নম্বর', type: 'text', value: contacts.phone },
-            { name: 'whatsapp', label: 'হোয়াটসঅ্যাপ লিংক', type: 'text', value: contacts.whatsapp },
-          </span>
+         
             { name: 'facebook', label: 'ফেসবুক লিংক', type: 'text', value: contacts.facebook }
         ], async (vals) => {
             await callAPI('updateContacts', vals);
