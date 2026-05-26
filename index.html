@@ -2,336 +2,186 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="theme-color" content="#0b1120">
-    <title>JTT Bright Electric | Premium Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>JTT Bright Electric</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
-
-        :root {
-            --dark: #0a0f1c;
-            --dark-card: rgba(17, 24, 39, 0.65);
-            --gold: #eab308;
-            --gold-grad: linear-gradient(135deg, #fde047, #eab308, #ca8a04);
-            --text: #f3f4f6;
-            --text-dim: #9ca3af;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
         body {
-            background: linear-gradient(135deg, #0a0f1c 0%, #1a1a2e 50%, #16213e 100%);
-            color: var(--text);
+            background: #0a0f1c;
             font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            position: relative;
+            color: #ffffff;
+            padding-bottom: 70px;
         }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(234, 179, 8, 0.04) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(234, 179, 8, 0.04) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
+        /* হেডার */
+        .header {
+            background: linear-gradient(135deg, #0f172a, #030712);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(234,179,8,0.3);
         }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 16px 16px 90px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .glass-card {
-            background: var(--dark-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .glass-card:hover {
-            border-color: rgba(234, 179, 8, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: var(--gold-grad);
-            border: none;
-            padding: 16px 32px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0a0f1c;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-        }
-
-        .cta-btn i { transition: transform 0.35s ease; }
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(234, 179, 8, 0.6), 0 8px 25px rgba(234, 179, 8, 0.4);
-        }
-        .cta-btn:hover i { transform: translateX(5px); }
-        .cta-btn:active { transform: scale(0.98); }
-
-        .hero { text-align: center; padding: 1rem 0; }
-        .hero-icon { font-size: 3rem; filter: drop-shadow(0 0 10px #eab308); }
-        .hero-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #eab308);
+        .header h1 {
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #fde047, #eab308);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .hero-subtitle { color: var(--text-dim); margin-bottom: 1rem; }
-
+        .header p {
+            font-size: 0.7rem;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+        /* সেকেন্ডারি নেভ (এডিটেবল লিংক) */
         .secondary-nav {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            border-radius: 60px;
-            padding: 10px 16px;
-            margin-bottom: 20px;
+            background: #111827;
+            padding: 12px 16px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            border: 1px solid var(--border);
+            gap: 10px;
+            border-bottom: 1px solid #1f2937;
         }
-        .nav-link-custom {
-            background: rgba(30, 41, 59, 0.8);
-            color: var(--text-dim);
+        .sec-link {
+            background: #1e293b;
+            color: #9ca3af;
             text-decoration: none;
-            font-size: 0.75rem;
             padding: 6px 14px;
             border-radius: 40px;
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            font-size: 0.75rem;
+            transition: 0.2s;
         }
-        .nav-link-custom:hover {
-            background: var(--gold);
+        .sec-link:hover {
+            background: #eab308;
             color: #0a0f1c;
-            transform: translateY(-2px);
         }
-
+        /* বটম ট্যাব বার */
         .bottom-tab {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(234, 179, 8, 0.2);
+            background: #0f172a;
             display: flex;
             justify-content: space-around;
-            padding: 10px 12px 22px;
+            padding: 10px 12px 20px;
+            border-top: 1px solid #eab308;
             z-index: 100;
         }
         .tab-btn {
+            background: none;
+            border: none;
+            color: #9ca3af;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 4px;
-            background: none;
-            border: none;
-            color: var(--text-dim);
             font-size: 0.65rem;
             cursor: pointer;
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 30px;
-            transition: all 0.2s ease;
         }
-        .tab-btn i { font-size: 1.3rem; transition: transform 0.2s; }
-        .tab-btn:hover i { transform: translateY(-3px); }
+        .tab-btn i {
+            font-size: 1.2rem;
+        }
         .tab-btn.active {
-            color: var(--gold);
-            background: rgba(234, 179, 8, 0.12);
+            color: #eab308;
+            background: rgba(234,179,8,0.1);
         }
-
-        .page { display: none; animation: fadeSlide 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
-        .page.active { display: block; }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* কন্টেইনার ও কার্ড */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
         }
-
-        .notice-item, .job-item, .product-item {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
+        .card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
-            padding: 1rem;
-            margin-bottom: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.25s ease;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border: 1px solid #1f2937;
         }
-        .notice-item:hover, .job-item:hover, .product-item:hover {
-            border-color: rgba(234, 179, 8, 0.3);
-            transform: translateX(4px);
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-left: 4px solid #eab308;
+            padding-left: 12px;
+            margin-bottom: 1rem;
         }
-        .product-img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 18px;
-            margin-bottom: 10px;
-        }
-        .section-header {
+        .flex-between {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
             gap: 10px;
         }
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            border-left: 4px solid var(--gold);
-            padding-left: 12px;
-        }
         .admin-btn {
-            background: var(--gold-grad);
+            background: linear-gradient(135deg, #fde047, #eab308);
             border: none;
             color: #0a0f1c;
             font-weight: 600;
-            padding: 8px 18px;
+            padding: 6px 16px;
             border-radius: 40px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             cursor: pointer;
-            transition: all 0.25s ease;
         }
-        .admin-btn:hover { transform: scale(1.02); box-shadow: 0 0 12px rgba(234, 179, 8, 0.4); }
-        .admin-icons { display: flex; justify-content: flex-end; gap: 15px; margin-top: 10px; }
+        .notice-item, .job-item, .product-item {
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #1f2937;
+        }
+        .product-img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
         .icon-btn {
             background: none;
             border: none;
-            color: var(--text-dim);
-            font-size: 1rem;
+            color: #9ca3af;
             cursor: pointer;
-            padding: 6px;
-            transition: all 0.2s;
+            padding: 4px 8px;
         }
+        .icon-btn.edit { color: #eab308; }
         .icon-btn.del { color: #ef4444; }
-        .icon-btn.edit { color: var(--gold); }
-        .icon-btn:hover { transform: scale(1.1); }
         .contact-row {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 12px;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 16px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
         }
-
         .floating-admin {
             position: fixed;
-            bottom: 85px;
+            bottom: 80px;
             right: 16px;
-            background: var(--gold-grad);
-            width: 52px;
-            height: 52px;
+            background: #eab308;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(234, 179, 8, 0.5);
             cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
+            color: #0a0f1c;
             z-index: 150;
-            border: none;
-            font-size: 1.3rem;
-            color: #0a0f1c;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .floating-admin:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 25px rgba(234, 179, 8, 0.7);
-        }
-
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            padding: 20px;
-        }
-        .modal-card {
-            background: #111827;
-            border-radius: 32px;
-            padding: 1.8rem;
-            width: 100%;
-            max-width: 380px;
-            border-top: 3px solid var(--gold);
-        }
-        .modal-card input, .modal-card textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 12px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 20px;
-            color: white;
-        }
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        .btn-save {
-            flex: 1;
-            background: var(--gold-grad);
-            border: none;
-            padding: 10px;
-            border-radius: 30px;
-            font-weight: bold;
-            color: #0a0f1c;
-            cursor: pointer;
-        }
-        .btn-cancel {
-            flex: 1;
-            background: #334155;
-            border: none;
-            padding: 10px;
-            border-radius: 30px;
-            color: white;
-            cursor: pointer;
-        }
+        .page { display: none; }
+        .page.active { display: block; }
         .toast {
             position: fixed;
             bottom: 100px;
@@ -340,52 +190,149 @@
             background: #10b981;
             color: white;
             text-align: center;
-            padding: 12px;
-            border-radius: 50px;
-            z-index: 300;
-            animation: fadeOut 2s ease;
+            padding: 10px;
+            border-radius: 40px;
+            z-index: 200;
         }
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            70% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #111827;
+            border-radius: 28px;
+            padding: 20px;
+            width: 90%;
+            max-width: 350px;
+            border-top: 3px solid #eab308;
+        }
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            color: white;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn-save {
+            flex: 1;
+            background: #eab308;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: #0a0f1c;
+        }
+        .btn-cancel {
+            flex: 1;
+            background: #334155;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            color: white;
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            color: var(--text-dim);
+            padding: 15px;
             font-size: 0.7rem;
-        }
-        @media (max-width: 480px) {
-            .cta-btn { padding: 12px 24px; font-size: 0.95rem; max-width: 220px; }
-            .hero-title { font-size: 1.4rem; }
+            color: #6b7280;
         }
     </style>
 </head>
 <body>
 
+<div class="header">
+    <h1>⚡ JTT BRIGHT ELECTRIC</h1>
+    <p>Premium Electrical Solutions</p>
+</div>
+
+<!-- সেকেন্ডারি নেভ (৫টি লিংক) -->
+<div class="secondary-nav" id="secondaryNav"></div>
+
 <div class="container">
-    <div class="hero">
-        <div class="hero-icon">⚡</div>
-        <h1 class="hero-title">JTT BRIGHT ELECTRIC & ACCESSORIES</h1>
-        <p class="hero-subtitle">Secure Your Future</p>
-        <button class="cta-btn" id="mainCtaBtn">
-            <i class="fas fa-bolt"></i> এক্সপ্লোর করুন <i class="fas fa-arrow-right"></i>
-        </button>
+    <!-- হোম পেজ -->
+    <div id="homePage" class="page active">
+        <div class="card">
+            <h2 style="color:#eab308;">✨ স্বাগতম</h2>
+            <p style="color:#9ca3af; margin-top: 10px;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন।</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                <span style="background:#1e293b; padding:4px 12px; border-radius:30px;">✅ 100+ Product</span>
+                <span style="background:#1e293b; padding:4px 12px; border-radius:30px;">✅ 500+ Outlet</span>
+                <span style="background:#1e293b; padding:4px 12px; border-radius:30px;">✅ Free Delivery</span>
+                <span style="background:#1e293b; padding:4px 12px; border-radius:30px;">✅ Replacement</span>
+            </div>
+        </div>
     </div>
 
-    <!-- সেকেন্ডারি নেভিগেশন -->
-    <div class="secondary-nav" id="secondaryNav"></div>
+    <!-- নোটিশ পেজ -->
+    <div id="noticePage" class="page">
+        <div class="card">
+            <div class="flex-between">
+                <h3 class="section-title">📢 নোটিশ</h3>
+                <button id="addNoticeBtn" class="admin-btn" style="display:none;">+ যোগান</button>
+            </div>
+            <div id="noticesList">লোড হচ্ছে...</div>
+        </div>
+    </div>
 
-    <div id="homePage" class="page active">
-        <div class="glass-card">
-            <h2 style="color:var(--gold); margin-bottom:12px;">✨ স্বাগতম</h2>
-            <p style="color:var(--text-dim); line-height:1.6;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন।</p>
-            <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;">
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ 100+ Product</span>
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ 500+ Outlet</span>
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ Free Delivery</span>
-                <span style="background:rgba(234,179,8,0.15); padding:6px 14px; border-radius:30px;">✅ Replacement</span>
+    <!-- জব পেজ -->
+    <div id="jobPage" class="page">
+        <div class="card">
+            <div class="flex-between">
+                <h3 class="section-title">💼 জব সার্কুলার</h3>
+                <button id="addJobBtn" class="admin-btn" style="display:none;">+ পোস্ট</button>
+            </div>
+            <div id="jobsList"></div>
+        </div>
+    </div>
+
+    <!-- প্রোডাক্ট পেজ -->
+    <div id="productPage" class="page">
+        <div class="card">
+            <div class="flex-between">
+                <h3 class="section-title">🔌 প্রোডাক্ট</h3>
+                <button id="addProductBtn" class="admin-btn" style="display:none;">+ প্রোডাক্ট</button>
+            </div>
+            <div id="productsList"></div>
+        </div>
+    </div>
+
+    <!-- কন্টাক্ট পেজ -->
+    <div id="contactPage" class="page">
+        <div class="card">
+            <h3 class="section-title">📞 যোগাযোগ</h3>
+            <div id="contactDisplay"></div>
+            <button id="editContactBtn" class="admin-btn" style="margin-top:1rem; display:none;">✏️ কন্টাক্ট এডিট</button>
+        </div>
+    </div>
+    <footer>⚡ Google Sheets Powered | Premium Solutions</footer>
+</div>
+
+<!-- বটম ট্যাব বার -->
+<div class="bottom-tab">
+    <button class="tab-btn active" data-page="home"><i class="fas fa-home"></i><span>হোম</span></button>
+    <button class="tab-btn" data-page="notice"><i class="fas fa-bullhorn"></i><span>নোটিশ</span></button>
+    <button class="tab-btn" data-page="job"><i class="fas fa-briefcase"></i><span>জব</span></button>
+    <button class="tab-btn" data-page="product"><i class="fas fa-plug"></i><span>প্রোডাক্ট</span></button>
+    <button class="tab-btn" data-page="contact"><i class="fas fa-headset"></i><span>কন্টাক্ট</span></button>
+</div>
+
+<button class="floating-admin" id="floatingAdminBtn"><i class="fas fa-user-shield"></i></button>
+
+<script>
+    // ========== API URL ==========
     const API_URL = 'https://script.google.com/macros/s/AKfycbwdO_Nhn6vbJeQSGt-PuvmfQoHjo3PsL5Drk6z0oHCxJ41ldVULFfNF6Dc0qulVNjnm/exec';
     
     let isAdmin = false;
@@ -393,11 +340,11 @@
     
     // ৫টি ডিফল্ট লিংক
     let navLinks = [
-        { id: '1', text: '💰 Financial', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
-        { id: '2', text: '📊 Dealer To Retailer Sale', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
-        { id: '3', text: '📋 Attendance', url: 'https://script.google.com/macros/s/AKfycbxRWwE3oGt-JqNTmXzPLZyxpVEubtglHbRKXu63blB_hlDBWS4tEmo-sACXrdD95qUJIA/exec' },
-        { id: '4', text: '👥 Employees', url: 'https://script.google.com/macros/s/AKfycbyDXG2pmjSNZREbmRNtVVb5_VUjXaE0aWRuwc3GICJe7SGEvQqFSYnE5L4w6vSBTkuX/exec' },
-        { id: '5', text: '📦 Package', url: 'https://script.google.com/macros/s/AKfycbzrQ9YF4WminK1FHbxJO-foWdpY5RcITcxyFG7OPMTPVeqVfyT_r0O8haMAyFbsORQT/exec' }
+        { text: '💰 Financial', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
+        { text: '📊 Dealer To Retailer Sale', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
+        { text: '📋 Attendance', url: 'https://script.google.com/macros/s/AKfycbxRWwE3oGt-JqNTmXzPLZyxpVEubtglHbRKXu63blB_hlDBWS4tEmo-sACXrdD95qUJIA/exec' },
+        { text: '👥 Employees', url: 'https://script.google.com/macros/s/AKfycbyDXG2pmjSNZREbmRNtVVb5_VUjXaE0aWRuwc3GICJe7SGEvQqFSYnE5L4w6vSBTkuX/exec' },
+        { text: '📦 Package', url: 'https://script.google.com/macros/s/AKfycbzrQ9YF4WminK1FHbxJO-foWdpY5RcITcxyFG7OPMTPVeqVfyT_r0O8haMAyFbsORQT/exec' }
     ];
 
     function showToast(msg) {
@@ -405,320 +352,231 @@
         t.className = 'toast';
         t.innerText = msg;
         document.body.appendChild(t);
-        setTimeout(() => t.remove(), 2500);
+        setTimeout(() => t.remove(), 2000);
     }
 
     async function callAPI(action, data = {}) {
         try {
             const body = new URLSearchParams({ action, ...data });
-            const response = await fetch(API_URL, { method: 'POST', body });
-            return await response.json();
-        } catch (error) {
-            console.error(error);
-            return { success: false, error: error.message };
+            const res = await fetch(API_URL, { method: 'POST', body });
+            return await res.json();
+        } catch(e) {
+            return { success: false };
         }
     }
 
     async function loadAll() {
-        try {
-            const [n, j, p, c] = await Promise.all([
-                callAPI('getNotices'), callAPI('getJobs'), callAPI('getProducts'),
-                callAPI('getContacts')
-            ]);
-            if (n.success) notices = n.data || [];
-            if (j.success) jobs = j.data || [];
-            if (p.success) products = p.data || [];
-            if (c.success) contacts = c.data || {};
-            
-            renderAll();
-        } catch(e) { 
-            console.error(e);
-            renderAll();
-        }
+        const [n, j, p, c] = await Promise.all([
+            callAPI('getNotices'), callAPI('getJobs'), callAPI('getProducts'), callAPI('getContacts')
+        ]);
+        if (n.success) notices = n.data || [];
+        if (j.success) jobs = j.data || [];
+        if (p.success) products = p.data || [];
+        if (c.success) contacts = c.data || {};
+        renderAll();
     }
 
     function renderAll() {
-        renderNotices();
-        renderJobs();
-        renderProducts();
-        renderContacts();
-        renderSecondaryNav();
-        
-        document.querySelectorAll('.admin-btn').forEach(btn => btn.style.display = isAdmin ? 'inline-flex' : 'none');
-    }
-
-    function renderNotices() {
-        let c = document.getElementById('noticesList');
-        if(!c) return;
-        if(!notices || notices.length === 0) {
-            c.innerHTML = '<div style="text-align:center;color:var(--text-dim);">কোনো নোটিশ নেই</div>';
-            return;
-        }
-        c.innerHTML = notices.map(n => `
+        // নোটিশ
+        let nc = document.getElementById('noticesList');
+        if(nc) nc.innerHTML = notices.map(n => `
             <div class="notice-item">
-                <div style="color:var(--gold);font-weight:bold;">📢 ${escapeHtml(n.title)}</div>
-                <small style="color:var(--text-dim);">${n.date || ''}</small>
-                <p style="color:var(--text-dim);">${escapeHtml(n.description)}</p>
-                ${isAdmin ? `<div class="admin-icons">
-                    <button class="icon-btn edit" onclick="openEditNotice('${n.id}')"><i class="fas fa-pen"></i></button>
-                    <button class="icon-btn del" onclick="deleteItem('notice','${n.id}')"><i class="fas fa-trash"></i></button>
-                </div>` : ''}
+                <b style="color:#eab308;">📢 ${escapeHtml(n.title)}</b><br>
+                <small>${n.date || ''}</small>
+                <p>${escapeHtml(n.description)}</p>
+                ${isAdmin ? `<div><button class="icon-btn edit" onclick="editNotice('${n.id}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('notice','${n.id}')"><i class="fas fa-trash"></i></button></div>` : ''}
             </div>
-        `).join('');
-    }
-
-    function renderJobs() {
-        let c = document.getElementById('jobsList');
-        if(!c) return;
-        if(!jobs || jobs.length === 0) {
-            c.innerHTML = '<div style="text-align:center;color:var(--text-dim);">কোনো জব নেই</div>';
-            return;
-        }
-        c.innerHTML = jobs.map(j => `
+        `).join('') || '<div style="color:#9ca3af;">কোনো নোটিশ নেই</div>';
+        
+        // জব
+        let jc = document.getElementById('jobsList');
+        if(jc) jc.innerHTML = jobs.map(j => `
             <div class="job-item">
-                <h4 style="color:var(--gold);">💼 ${escapeHtml(j.title)}</h4>
-                <div style="color:var(--text-dim);">${escapeHtml(j.company)} | ${j.location}</div>
-                <div style="color:var(--text-dim);">📅 শেষ: ${j.deadline}</div>
-                <p style="color:var(--text-dim);">${escapeHtml(j.details)}</p>
-                ${isAdmin ? `<div class="admin-icons">
-                    <button class="icon-btn edit" onclick="openEditJob('${j.id}')"><i class="fas fa-pen"></i></button>
-                    <button class="icon-btn del" onclick="deleteItem('job','${j.id}')"><i class="fas fa-trash"></i></button>
-                </div>` : ''}
+                <b style="color:#eab308;">💼 ${escapeHtml(j.title)}</b><br>
+                <small>${escapeHtml(j.company)} | ${j.location}</small><br>
+                <small>📅 শেষ: ${j.deadline}</small>
+                <p>${escapeHtml(j.details)}</p>
+                ${isAdmin ? `<div><button class="icon-btn edit" onclick="editJob('${j.id}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('job','${j.id}')"><i class="fas fa-trash"></i></button></div>` : ''}
             </div>
-        `).join('');
-    }
-
-    function renderProducts() {
-        let c = document.getElementById('productsList');
-        if(!c) return;
-        if(!products || products.length === 0) {
-            c.innerHTML = '<div style="text-align:center;color:var(--text-dim);">কোনো প্রোডাক্ট নেই</div>';
-            return;
-        }
-        c.innerHTML = products.map(p => `
+        `).join('') || '<div style="color:#9ca3af;">কোনো জব নেই</div>';
+        
+        // প্রোডাক্ট
+        let pc = document.getElementById('productsList');
+        if(pc) pc.innerHTML = products.map(p => `
             <div class="product-item">
                 <img class="product-img" src="${p.imageUrl || 'https://placehold.co/400x300/eab308/0a1128?text=Product'}" onerror="this.src='https://placehold.co/400x300/eab308/0a1128?text=Product'">
-                <h4 style="color:var(--gold);">${escapeHtml(p.name)}</h4>
-                <div style="color:var(--gold);">${p.price}</div>
-                <p style="color:var(--text-dim);">${escapeHtml(p.description)}</p>
-                ${isAdmin ? `<div class="admin-icons">
-                    <button class="icon-btn edit" onclick="openEditProduct('${p.id}')"><i class="fas fa-pen"></i></button>
-                    <button class="icon-btn del" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button>
-                </div>` : ''}
+                <b style="color:#eab308;">${escapeHtml(p.name)}</b>
+                <div>${p.price}</div>
+                <p>${escapeHtml(p.description)}</p>
+                ${isAdmin ? `<div><button class="icon-btn edit" onclick="editProduct('${p.id}')"><i class="fas fa-pen"></i></button>
+                <button class="icon-btn del" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button></div>` : ''}
             </div>
-        `).join('');
-    }
-
-    function renderContacts() {
-        let c = document.getElementById('contactDisplay');
-        if(!c) return;
-        c.innerHTML = `
-            <div class="contact-row"><span><i class="fas fa-envelope"></i> ইমেইল</span><a href="mailto:${contacts.email || 'info@jttbright.com'}" style="color:var(--gold);">${contacts.email || 'info@jttbright.com'}</a></div>
-            <div class="contact-row"><span><i class="fas fa-phone"></i> ফোন</span><span style="color:var(--text-dim);">${contacts.phone || '+880-1234-567890'}</span></div>
-            <div class="contact-row"><span><i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপ</span><a href="${contacts.whatsapp || 'https://wa.me/8801712345678'}" target="_blank" style="color:var(--gold);">লিংক</a></div>
-            <div class="contact-row"><span><i class="fab fa-facebook"></i> ফেসবুক</span><a href="${contacts.facebook || 'https://facebook.com/jttbright'}" target="_blank" style="color:var(--gold);">ভিজিট করুন</a></div>
+        `).join('') || '<div style="color:#9ca3af;">কোনো প্রোডাক্ট নেই</div>';
+        
+        // কন্টাক্ট
+        let cc = document.getElementById('contactDisplay');
+        if(cc) cc.innerHTML = `
+            <div class="contact-row"><span>📧 ইমেইল</span><a href="mailto:${contacts.email || 'info@jttbright.com'}" style="color:#eab308;">${contacts.email || 'info@jttbright.com'}</a></div>
+            <div class="contact-row"><span>📞 ফোন</span>${contacts.phone || '+880-1234-567890'}</div>
+            <div class="contact-row"><span>💬 হোয়াটসঅ্যাপ</span><a href="${contacts.whatsapp || 'https://wa.me/8801712345678'}" target="_blank" style="color:#eab308;">লিংক</a></div>
+            <div class="contact-row"><span>📘 ফেসবুক</span><a href="${contacts.facebook || 'https://facebook.com/jttbright'}" target="_blank" style="color:#eab308;">ভিজিট করুন</a></div>
         `;
-    }
-
-    function renderSecondaryNav() {
-        let c = document.getElementById('secondaryNav');
-        if(!c) return;
         
-        const getIcon = (text) => {
-            if (text.includes('Financial') || text.includes('💰')) return '<i class="fas fa-chart-line"></i>';
-            if (text.includes('Dealer') || text.includes('📊')) return '<i class="fas fa-exchange-alt"></i>';
-            if (text.includes('Attendance') || text.includes('📋')) return '<i class="fas fa-calendar-check"></i>';
-            if (text.includes('Employees') || text.includes('👥')) return '<i class="fas fa-users"></i>';
-            if (text.includes('Package') || text.includes('📦')) return '<i class="fas fa-box"></i>';
-            return '<i class="fas fa-link"></i>';
-        };
+        // সেকেন্ডারি নেভ
+        let sn = document.getElementById('secondaryNav');
+        if(sn) sn.innerHTML = navLinks.map(l => `<a href="${l.url}" target="_blank" class="sec-link">${escapeHtml(l.text)}</a>`).join('');
         
-        c.innerHTML = navLinks.map(l => {
-            let displayText = l.text.replace(/[💰📊📋👥📦]/g, '').trim();
-            return `<a href="${l.url}" target="_blank" class="nav-link-custom">${getIcon(l.text)} ${escapeHtml(displayText)}</a>`;
-        }).join('');
+        // অ্যাডমিন বাটন দেখানো
+        document.querySelectorAll('.admin-btn').forEach(btn => btn.style.display = isAdmin ? 'inline-block' : 'none');
     }
 
-    function escapeHtml(s) { 
-        if(!s) return ''; 
-        return String(s).replace(/[&<>]/g, m => m === '&' ? '&amp;' : (m === '<' ? '&lt;' : '&gt;')); 
-    }
+    function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, m => m=='&'?'&amp;':(m=='<'?'&lt;':'&gt;')); }
 
-    // ========== পপআপ ফাংশন ==========
-    function showModal(title, fields, onSave) {
-        let modalDiv = document.createElement('div');
-        modalDiv.className = 'modal-overlay';
-        let inputsHtml = '';
+    // মডাল ফাংশন
+    function showModal(title, fields, callback) {
+        let div = document.createElement('div');
+        div.className = 'modal';
+        let html = `<div class="modal-content"><h3 style="color:#eab308; margin-bottom:10px;">${title}</h3>`;
         fields.forEach(f => {
-            if (f.type === 'textarea') {
-                inputsHtml += `<input type="text" id="field_${f.name}" placeholder="${f.placeholder}" value="${escapeHtml(f.value || '')}" style="display:none;">`;
-                inputsHtml += `<textarea id="field_${f.name}_ta" placeholder="${f.placeholder}" rows="3">${escapeHtml(f.value || '')}</textarea>`;
+            if(f.type === 'textarea') {
+                html += `<textarea id="modal_${f.name}" placeholder="${f.placeholder}" rows="3">${escapeHtml(f.value || '')}</textarea>`;
             } else {
-                inputsHtml += `<input type="${f.type || 'text'}" id="field_${f.name}" placeholder="${f.placeholder}" value="${escapeHtml(f.value || '')}">`;
+                html += `<input type="${f.type || 'text'}" id="modal_${f.name}" placeholder="${f.placeholder}" value="${escapeHtml(f.value || '')}">`;
             }
         });
+        html += `<div class="btn-group"><button class="btn-save" id="modalSave">সংরক্ষণ</button><button class="btn-cancel" id="modalCancel">বাতিল</button></div></div>`;
+        div.innerHTML = html;
+        document.body.appendChild(div);
         
-        modalDiv.innerHTML = `
-            <div class="modal-card">
-                <h3 style="color:var(--gold); text-align:center; margin-bottom:1rem;">${title}</h3>
-                ${inputsHtml}
-                <div class="btn-group">
-                    <button class="btn-save" id="modalSaveBtn">সংরক্ষণ</button>
-                    <button class="btn-cancel" id="modalCancelBtn">বাতিল</button>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(modalDiv);
-        
-        // টেক্সটএরিয়া হ্যান্ডলিং
-        fields.forEach(f => {
-            if (f.type === 'textarea') {
-                let textarea = modalDiv.querySelector(`#field_${f.name}_ta`);
-                let hidden = modalDiv.querySelector(`#field_${f.name}`);
-                if(textarea && hidden) {
-                    textarea.oninput = () => hidden.value = textarea.value;
-                }
-            }
-        });
-        
-        modalDiv.querySelector('#modalSaveBtn').onclick = () => {
-            let values = {};
-            fields.forEach(f => {
-                if (f.type === 'textarea') {
-                    let el = modalDiv.querySelector(`#field_${f.name}_ta`);
-                    values[f.name] = el ? el.value : '';
-                } else {
-                    let el = modalDiv.querySelector(`#field_${f.name}`);
-                    values[f.name] = el ? el.value : '';
-                }
-            });
-            onSave(values);
-            modalDiv.remove();
+        div.querySelector('#modalSave').onclick = () => {
+            let vals = {};
+            fields.forEach(f => vals[f.name] = div.querySelector(`#modal_${f.name}`).value);
+            callback(vals);
+            div.remove();
         };
-        modalDiv.querySelector('#modalCancelBtn').onclick = () => modalDiv.remove();
+        div.querySelector('#modalCancel').onclick = () => div.remove();
     }
 
-    // Notice CRUD
-    function openAddNotice() {
-        if(!isAdmin) { showToast('অ্যাডমিন লগইন করুন'); return; }
+    // নোটিশ
+    window.addNotice = () => {
+        if(!isAdmin) return;
         showModal('➕ নতুন নোটিশ', [
-            { name: 'title', label: 'শিরোনাম', placeholder: 'নোটিশের শিরোনাম', type: 'text' },
-            { name: 'date', placeholder: 'তারিখ', type: 'text' },
+            { name: 'title', placeholder: 'শিরোনাম' },
+            { name: 'date', placeholder: 'তারিখ' },
             { name: 'description', placeholder: 'বর্ণনা', type: 'textarea' }
         ], async (vals) => {
             if(vals.title) {
-                await callAPI('addNotice', { title: vals.title, date: vals.date, description: vals.description });
-                showToast('✅ নোটিশ যোগ হয়েছে');
+                await callAPI('addNotice', vals);
+                showToast('নোটিশ যোগ হয়েছে');
                 loadAll();
             }
         });
-    }
-    
-    function openEditNotice(id) {
+    };
+    window.editNotice = (id) => {
         let item = notices.find(n => n.id == id);
         if(item) {
-            showModal('✏️ নোটিশ এডিট করুন', [
-                { name: 'title', placeholder: 'শিরোনাম', type: 'text', value: item.title },
-                { name: 'date', placeholder: 'তারিখ', type: 'text', value: item.date },
+            showModal('✏️ নোটিশ এডিট', [
+                { name: 'title', placeholder: 'শিরোনাম', value: item.title },
+                { name: 'date', placeholder: 'তারিখ', value: item.date },
                 { name: 'description', placeholder: 'বর্ণনা', type: 'textarea', value: item.description }
             ], async (vals) => {
-                await callAPI('updateNotice', { id, title: vals.title, date: vals.date, description: vals.description });
-                showToast('✅ নোটিশ আপডেট হয়েছে');
+                await callAPI('updateNotice', { id, ...vals });
+                showToast('আপডেট হয়েছে');
                 loadAll();
             });
         }
-    }
+    };
     
-    // Job CRUD
-    function openAddJob() {
-        if(!isAdmin) { showToast('অ্যাডমিন লগইন করুন'); return; }
-        showModal('💼 নতুন জব সার্কুলার', [
-            { name: 'title', placeholder: 'পদবি', type: 'text' },
-            { name: 'company', placeholder: 'কোম্পানির নাম', type: 'text' },
-            { name: 'location', placeholder: 'কর্মস্থল', type: 'text' },
-            { name: 'deadline', placeholder: 'শেষ তারিখ', type: 'text' },
+    // জব
+    window.addJob = () => {
+        if(!isAdmin) return;
+        showModal('💼 নতুন জব', [
+            { name: 'title', placeholder: 'পদবি' },
+            { name: 'company', placeholder: 'কোম্পানি' },
+            { name: 'location', placeholder: 'স্থান' },
+            { name: 'deadline', placeholder: 'শেষ তারিখ' },
             { name: 'details', placeholder: 'বিস্তারিত', type: 'textarea' }
         ], async (vals) => {
             if(vals.title) {
                 await callAPI('addJob', vals);
-                showToast('✅ জব পোস্ট হয়েছে');
+                showToast('জব পোস্ট হয়েছে');
                 loadAll();
             }
         });
-    }
-    
-    function openEditJob(id) {
+    };
+    window.editJob = (id) => {
         let item = jobs.find(j => j.id == id);
         if(item) {
-            showModal('✏️ জব এডিট করুন', [
-                { name: 'title', placeholder: 'পদবি', type: 'text', value: item.title },
-                { name: 'company', placeholder: 'কোম্পানি', type: 'text', value: item.company },
-                { name: 'location', placeholder: 'স্থান', type: 'text', value: item.location },
-                { name: 'deadline', placeholder: 'শেষ তারিখ', type: 'text', value: item.deadline },
+            showModal('✏️ জব এডিট', [
+                { name: 'title', placeholder: 'পদবি', value: item.title },
+                { name: 'company', placeholder: 'কোম্পানি', value: item.company },
+                { name: 'location', placeholder: 'স্থান', value: item.location },
+                { name: 'deadline', placeholder: 'শেষ তারিখ', value: item.deadline },
                 { name: 'details', placeholder: 'বিস্তারিত', type: 'textarea', value: item.details }
             ], async (vals) => {
                 await callAPI('updateJob', { id, ...vals });
-                showToast('✅ জব আপডেট হয়েছে');
+                showToast('আপডেট হয়েছে');
                 loadAll();
             });
         }
-    }
+    };
     
-    // Product CRUD
-    function openAddProduct() {
-        if(!isAdmin) { showToast('অ্যাডমিন লগইন করুন'); return; }
+    // প্রোডাক্ট
+    window.addProduct = () => {
+        if(!isAdmin) return;
         showModal('🔌 নতুন প্রোডাক্ট', [
-            { name: 'name', placeholder: 'পণ্যের নাম', type: 'text' },
-            { name: 'price', placeholder: 'মূল্য', type: 'text' },
-            { name: 'imageUrl', placeholder: 'ছবির URL', type: 'text' },
+            { name: 'name', placeholder: 'পণ্যের নাম' },
+            { name: 'price', placeholder: 'মূল্য' },
+            { name: 'imageUrl', placeholder: 'ছবির URL' },
             { name: 'description', placeholder: 'বর্ণনা', type: 'textarea' }
         ], async (vals) => {
             if(vals.name) {
                 await callAPI('addProduct', vals);
-                showToast('✅ প্রোডাক্ট যোগ হয়েছে');
+                showToast('প্রোডাক্ট যোগ হয়েছে');
                 loadAll();
             }
         });
-    }
-    
-    function openEditProduct(id) {
+    };
+    window.editProduct = (id) => {
         let item = products.find(p => p.id == id);
         if(item) {
-            showModal('✏️ প্রোডাক্ট এডিট করুন', [
-                { name: 'name', placeholder: 'নাম', type: 'text', value: item.name },
-                { name: 'price', placeholder: 'মূল্য', type: 'text', value: item.price },
-                { name: 'imageUrl', placeholder: 'ছবির URL', type: 'text', value: item.imageUrl },
+            showModal('✏️ প্রোডাক্ট এডিট', [
+                { name: 'name', placeholder: 'নাম', value: item.name },
+                { name: 'price', placeholder: 'মূল্য', value: item.price },
+                { name: 'imageUrl', placeholder: 'ছবির URL', value: item.imageUrl },
                 { name: 'description', placeholder: 'বর্ণনা', type: 'textarea', value: item.description }
             ], async (vals) => {
                 await callAPI('updateProduct', { id, ...vals });
-                showToast('✅ প্রোডাক্ট আপডেট হয়েছে');
+                showToast('আপডেট হয়েছে');
                 loadAll();
             });
         }
-    }
+    };
     
-    async function deleteItem(type, id) {
-        if(confirm('🔥 আপনি কি মুছতে চান?')) {
+    window.deleteItem = async (type, id) => {
+        if(confirm('মুছতে চান?')) {
             let act = type === 'notice' ? 'deleteNotice' : (type === 'job' ? 'deleteJob' : 'deleteProduct');
             await callAPI(act, { id });
-            showToast('🗑️ মুছে ফেলা হয়েছে');
+            showToast('মুছে ফেলা হয়েছে');
             loadAll();
         }
-    }
+    };
     
-    async function editContacts() {
-        if(!isAdmin) { showToast('অ্যাডমিন লগইন করুন'); return; }
-        showModal('📞 কন্টাক্ট তথ্য আপডেট', [
-            { name: 'email', placeholder: 'ইমেইল', type: 'text', value: contacts.email || '' },
-            { name: 'phone', placeholder: 'ফোন নম্বর', type: 'text', value: contacts.phone || '' },
-            { name: 'whatsapp', placeholder: 'হোয়াটসঅ্যাপ লিংক', type: 'text', value: contacts.whatsapp || '' },
-            { name: 'facebook', placeholder: 'ফেসবুক লিংক', type: 'text', value: contacts.facebook || '' }
+    window.editContacts = () => {
+        if(!isAdmin) return;
+        showModal('📞 কন্টাক্ট এডিট', [
+            { name: 'email', placeholder: 'ইমেইল', value: contacts.email || '' },
+            { name: 'phone', placeholder: 'ফোন', value: contacts.phone || '' },
+            { name: 'whatsapp', placeholder: 'হোয়াটসঅ্যাপ লিংক', value: contacts.whatsapp || '' },
+            { name: 'facebook', placeholder: 'ফেসবুক লিংক', value: contacts.facebook || '' }
         ], async (vals) => {
             await callAPI('updateContacts', vals);
-            showToast('✅ কন্টাক্ট আপডেট হয়েছে');
+            showToast('কন্টাক্ট আপডেট');
             loadAll();
         });
-    }
+    };
 
     // অ্যাডমিন লগইন
     async function login(u, p) {
@@ -726,20 +584,20 @@
         if(r.success) {
             isAdmin = true;
             localStorage.setItem('jtt_admin', 'true');
-            showToast('🔓 অ্যাডমিন লগইন সফল');
+            showToast('অ্যাডমিন লগইন সফল');
             renderAll();
             return true;
         }
         return false;
     }
-
-    function loginModal() {
+    
+    function showLogin() {
         showModal('🔐 অ্যাডমিন লগইন', [
-            { name: 'username', placeholder: 'ইউজারনেম', type: 'text' },
+            { name: 'username', placeholder: 'ইউজারনেম' },
             { name: 'password', placeholder: 'পাসওয়ার্ড', type: 'password' }
         ], async (vals) => {
             let ok = await login(vals.username, vals.password);
-            if(!ok) alert('❌ ভুল তথ্য! ব্যবহার করুন: admin / admin123');
+            if(!ok) alert('admin / admin123');
         });
     }
     
@@ -747,37 +605,29 @@
         isAdmin = false;
         localStorage.removeItem('jtt_admin');
         renderAll();
-        showToast('🔒 লগ আউট হয়েছে');
+        showToast('লগ আউট');
     }
 
-    // ইভেন্ট লিসেনার
+    // ট্যাব স্যুইচ
     document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            let page = btn.getAttribute('data-page');
+        btn.onclick = () => {
+            let page = btn.dataset.page;
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(page + 'Page').classList.add('active');
             document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
             btn.classList.add('active');
-        });
+        };
     });
     
-    document.getElementById('addNoticeBtn')?.addEventListener('click', openAddNotice);
-    document.getElementById('addJobBtn')?.addEventListener('click', openAddJob);
-    document.getElementById('addProductBtn')?.addEventListener('click', openAddProduct);
-    document.getElementById('editContactBtn')?.addEventListener('click', editContacts);
-    document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logout() : loginModal();
-    document.getElementById('mainCtaBtn')?.addEventListener('click', () => {
-        document.querySelector('.tab-btn[data-page="product"]').click();
-        showToast('🔌 প্রোডাক্ট দেখুন');
-    });
+    // বাটন ইভেন্ট
+    document.getElementById('addNoticeBtn')?.addEventListener('click', () => window.addNotice());
+    document.getElementById('addJobBtn')?.addEventListener('click', () => window.addJob());
+    document.getElementById('addProductBtn')?.addEventListener('click', () => window.addProduct());
+    document.getElementById('editContactBtn')?.addEventListener('click', () => window.editContacts());
+    document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logout() : showLogin();
     
     if(localStorage.getItem('jtt_admin') === 'true') isAdmin = true;
     loadAll();
-    
-    window.deleteItem = deleteItem;
-    window.openEditNotice = openEditNotice;
-    window.openEditJob = openEditJob;
-    window.openEditProduct = openEditProduct;
 </script>
 </body>
 </html>
