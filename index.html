@@ -2,9 +2,9 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewfit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <meta name="theme-color" content="#4a0010">
-    <title>JTT Bright Electric & Accessories | Premium Solutions</title>
+    <title>JTT | Premium Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -28,7 +28,7 @@
         }
 
         body {
-            background: #2A7B9B;
+            background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(161, 153, 82, 1) 11%, rgba(29, 196, 96, 1) 22%, rgba(188, 224, 197, 1) 34%, rgba(155, 209, 29, 1) 47%, rgba(210, 145, 40, 1) 59%, rgba(185, 211, 39, 1) 71%, rgba(142, 168, 101, 1) 87%, rgba(158, 89, 46, 1) 97%);
             color: var(--text);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
@@ -36,7 +36,6 @@
             background-attachment: fixed;
         }
 
-        /* গ্লাস গ্রিড প্যাটার্ন */
         body::before {
             content: "";
             position: fixed;
@@ -59,7 +58,6 @@
             z-index: 1;
         }
 
-        /* গ্লাস কার্ড */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(16px);
@@ -78,7 +76,6 @@
             box-shadow: 0 12px 40px rgba(245, 158, 11, 0.35);
         }
 
-        /* CTA বাটন */
         .cta-btn {
             display: inline-flex;
             align-items: center;
@@ -107,7 +104,6 @@
         .cta-btn:hover i { transform: translateX(5px); }
         .cta-btn:active { transform: scale(0.98); }
 
-        /* হিরো */
         .hero { text-align: center; padding: 1rem 0; }
         .hero-icon { font-size: 3rem; filter: drop-shadow(0 0 10px #fbbf24); }
         .hero-title {
@@ -120,32 +116,61 @@
         }
         .hero-subtitle { color: #fde68a; margin-bottom: 1rem; }
 
-        /* সেকেন্ডারি নেভ */
-        .secondary-nav {
-            background: rgba(0, 0, 0, 0.4);
+        /* সেকেন্ডারি নেভ - ৫টি লিংক সহ */
+        .secondary-nav-wrapper {
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(12px);
-            border-radius: 50px;
+            border-radius: 60px;
             padding: 10px 16px;
             margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .secondary-nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 8px;
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            flex: 1;
         }
         .nav-link-custom {
             background: rgba(0, 0, 0, 0.5);
             color: #fde68a;
             text-decoration: none;
             font-size: 0.75rem;
-            padding: 6px 14px;
+            font-weight: 500;
+            padding: 8px 16px;
             border-radius: 40px;
             transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
         }
+        .nav-link-custom i { font-size: 0.8rem; }
         .nav-link-custom:hover {
             background: #f59e0b;
             color: #4a0010;
             transform: translateY(-2px);
+        }
+        .edit-nav-btn {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid #fbbf24;
+            color: #fbbf24;
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .edit-nav-btn:hover {
+            background: #f59e0b;
+            color: #4a0010;
         }
 
         /* বটম ট্যাব */
@@ -184,7 +209,6 @@
             text-shadow: 0 0 5px #f59e0b;
         }
 
-        /* পেজ এনিমেশন */
         .page { display: none; animation: fadeSlide 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
         .page.active { display: block; }
         @keyframes fadeSlide {
@@ -192,7 +216,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* লিস্ট আইটেম */
         .notice-item, .job-item, .product-item {
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(8px);
@@ -264,7 +287,6 @@
             flex-wrap: wrap;
         }
 
-        /* ফ্লোটিং অ্যাডমিন বাটন */
         .floating-admin {
             position: fixed;
             bottom: 85px;
@@ -289,7 +311,6 @@
             box-shadow: 0 0 30px rgba(251, 191, 36, 0.8);
         }
 
-        /* ========= প্রিমিয়াম পপআপ মডাল ========= */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -315,7 +336,7 @@
             border-radius: 48px;
             padding: 1.8rem 1.5rem;
             width: 100%;
-            max-width: 380px;
+            max-width: 450px;
             border: 1px solid rgba(251, 191, 36, 0.5);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(245, 158, 11, 0.2);
             animation: slideUp 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -368,7 +389,7 @@
         .modal-card textarea {
             border-radius: 24px;
             resize: vertical;
-            min-height: 80px;
+            min-height: 100px;
         }
         .btn-group {
             display: flex;
@@ -432,10 +453,13 @@
             color: #fde68a;
             font-size: 0.7rem;
         }
-        @media (max-width: 480px) {
+        @media (max-width: 550px) {
             .cta-btn { padding: 12px 24px; font-size: 0.95rem; max-width: 220px; }
             .hero-title { font-size: 1.4rem; }
             .modal-card { padding: 1.5rem; }
+            .nav-link-custom { font-size: 0.7rem; padding: 5px 10px; }
+            .secondary-nav-wrapper { flex-direction: column; }
+            .edit-nav-btn { align-self: center; }
         }
     </style>
 </head>
@@ -451,7 +475,11 @@
         </button>
     </div>
 
-    <div class="secondary-nav" id="secondaryNav"></div>
+    <!-- সেকেন্ডারি নেভিগেশন বার (৫টি লিংক সহ) -->
+    <div class="secondary-nav-wrapper">
+        <div class="secondary-nav" id="secondaryNav"></div>
+        <button class="edit-nav-btn" id="editNavBtn"><i class="fas fa-edit"></i> লিংক এডিট</button>
+    </div>
 
     <div id="homePage" class="page active">
         <div class="glass-card">
@@ -514,6 +542,15 @@
     let isAdmin = false;
     let notices = [], jobs = [], products = [], contacts = {}, navLinks = [];
 
+    // ========== ডিফল্ট ৫টি লিংক (Financial, Dealer To Retailer Sale, Attendance, Employees, Package) ==========
+    const DEFAULT_NAV_LINKS = [
+        { id: '1', text: '💰 Financial', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
+        { id: '2', text: '📊 Dealer To Retailer Sale', url: 'https://script.google.com/macros/s/AKfycbw1p4qBTHrOsXFtXTLsnd0dnT1Sn5ZE0FSqUSxN8mdCAG-_31F-NDcUghExHBz5zztaxw/exec' },
+        { id: '3', text: '📋 Attendance', url: 'https://script.google.com/macros/s/AKfycbxRWwE3oGt-JqNTmXzPLZyxpVEubtglHbRKXu63blB_hlDBWS4tEmo-sACXrdD95qUJIA/exec' },
+        { id: '4', text: '👥 Employees', url: 'https://script.google.com/macros/s/AKfycbyDXG2pmjSNZREbmRNtVVb5_VUjXaE0aWRuwc3GICJe7SGEvQqFSYnE5L4w6vSBTkuX/exec' },
+        { id: '5', text: '📦 Package', url: 'https://script.google.com/macros/s/AKfycbzrQ9YF4WminK1FHbxJO-foWdpY5RcITcxyFG7OPMTPVeqVfyT_r0O8haMAyFbsORQT/exec' }
+    ];
+
     function showToast(msg) {
         let t = document.createElement('div');
         t.className = 'toast';
@@ -543,9 +580,21 @@
             if (j.success) jobs = j.data;
             if (p.success) products = p.data;
             if (c.success) contacts = c.data;
-            if (nav.success) navLinks = nav.data;
+            
+            // নেভ লিংক: API থেকে আসলে সেটা ব্যবহার করবে, না হলে ডিফল্ট ব্যবহার করবে
+            if (nav.success && nav.data && nav.data.length > 0) {
+                navLinks = nav.data;
+            } else {
+                navLinks = DEFAULT_NAV_LINKS;
+                // API এ ডিফল্ট সেভ করে দিন
+                await callAPI('updateNavLinks', { links: JSON.stringify(DEFAULT_NAV_LINKS) });
+            }
             renderAll();
-        } catch(e) { console.error(e); }
+        } catch(e) { 
+            console.error(e);
+            navLinks = DEFAULT_NAV_LINKS;
+            renderAll();
+        }
     }
 
     function renderAll() {
@@ -555,21 +604,26 @@
 
     function renderNotices() {
         let c = document.getElementById('noticesList');
+        if(!c) return;
         c.innerHTML = notices.map(n => `<div class="notice-item"><div style="color:#fbbf24;font-weight:bold;">📢 ${escapeHtml(n.title)}</div><small style="color:#fde68a;">${n.date||''}</small><p style="color:#fff5e6;">${escapeHtml(n.description)}</p>${isAdmin?`<div class="admin-icons"><button class="icon-btn edit" onclick="openEditNotice('${n.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('notice','${n.id}')"><i class="fas fa-trash"></i></button></div>`:''}</div>`).join('')||'<div style="text-align:center;color:#fde68a;">কোনো নোটিশ নেই</div>';
     }
 
     function renderJobs() {
         let c = document.getElementById('jobsList');
+        if(!c) return;
         c.innerHTML = jobs.map(j => `<div class="job-item"><h4 style="color:#fbbf24;">💼 ${escapeHtml(j.title)}</h4><div style="color:#fde68a;">${escapeHtml(j.company)} | ${j.location}</div><div style="color:#fde68a;">📅 শেষ: ${j.deadline}</div><p style="color:#fff5e6;">${escapeHtml(j.details)}</p>${isAdmin?`<div class="admin-icons"><button class="icon-btn edit" onclick="openEditJob('${j.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('job','${j.id}')"><i class="fas fa-trash"></i></button></div>`:''}</div>`).join('')||'<div style="text-align:center;color:#fde68a;">কোনো জব নেই</div>';
     }
 
     function renderProducts() {
         let c = document.getElementById('productsList');
+        if(!c) return;
         c.innerHTML = products.map(p => `<div class="product-item"><img class="product-img" src="${p.imageUrl||'https://placehold.co/400x300/f59e0b/4a0010?text=Product'}" onerror="this.src='https://placehold.co/400x300/f59e0b/4a0010?text=Product'"><h4 style="color:#fbbf24;">${escapeHtml(p.name)}</h4><div style="color:#fbbf24;">${p.price}</div><p style="color:#fff5e6;">${escapeHtml(p.description)}</p>${isAdmin?`<div class="admin-icons"><button class="icon-btn edit" onclick="openEditProduct('${p.id}')"><i class="fas fa-pen"></i></button><button class="icon-btn del" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button></div>`:''}</div>`).join('')||'<div style="text-align:center;color:#fde68a;">কোনো প্রোডাক্ট নেই</div>';
     }
 
     function renderContacts() {
-        document.getElementById('contactDisplay').innerHTML = `
+        let c = document.getElementById('contactDisplay');
+        if(!c) return;
+        c.innerHTML = `
             <div class="contact-row"><span><i class="fas fa-envelope"></i> ইমেইল</span><a href="mailto:${contacts.email}" style="color:#fbbf24;">${contacts.email||''}</a></div>
             <div class="contact-row"><span><i class="fas fa-phone"></i> ফোন</span><span style="color:#fde68a;">${contacts.phone||''}</span></div>
             <div class="contact-row"><span><i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপ</span><a href="${contacts.whatsapp||''}" target="_blank" style="color:#fbbf24;">লিংক</a></div>
@@ -579,11 +633,61 @@
 
     function renderSecondaryNav() {
         let c = document.getElementById('secondaryNav');
-        if(!navLinks.length){ c.innerHTML='<span style="color:#fde68a;">কোনো লিংক নেই</span>'; return; }
-        c.innerHTML = navLinks.map(l => `<a href="${l.url}" target="_blank" class="nav-link-custom"><i class="fas fa-link"></i> ${escapeHtml(l.text)}</a>`).join('');
+        if(!c) return;
+        if(!navLinks || navLinks.length === 0) {
+            c.innerHTML = '<span style="color:#fde68a;">কোনো লিংক নেই</span>';
+            return;
+        }
+        
+        // আইকন ম্যাপিং
+        const getIcon = (text) => {
+            if (text.includes('Financial') || text.includes('💰')) return '<i class="fas fa-chart-line"></i>';
+            if (text.includes('Dealer') || text.includes('📊')) return '<i class="fas fa-exchange-alt"></i>';
+            if (text.includes('Attendance') || text.includes('📋')) return '<i class="fas fa-calendar-check"></i>';
+            if (text.includes('Employees') || text.includes('👥')) return '<i class="fas fa-users"></i>';
+            if (text.includes('Package') || text.includes('📦')) return '<i class="fas fa-box"></i>';
+            return '<i class="fas fa-link"></i>';
+        };
+        
+        c.innerHTML = navLinks.map(l => {
+            let displayText = l.text.replace(/[💰📊📋👥📦]/g, '').trim();
+            return `<a href="${l.url}" target="_blank" class="nav-link-custom">${getIcon(l.text)} ${escapeHtml(displayText)}</a>`;
+        }).join('');
     }
 
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, m=>m==='&'?'&amp;':m==='<'?'&lt;':'&gt;'); }
+
+    // ========== নেভ লিংক এডিট ফাংশন ==========
+    async function editNavLinks() {
+        if(!isAdmin) {
+            showToast('অ্যাডমিন লগইন করুন');
+            return;
+        }
+        let currentStr = navLinks.map(l => `${l.text}|${l.url}`).join('\n');
+        showModal('🔗 নেভিগেশন লিংক এডিট করুন', '🔗', [
+            { name: 'links', label: 'লিংক (প্রতি লাইনে একটি: টেক্সট|URL)', 
+              placeholder: '💰 Financial|https://script.google.com/...\n📊 Dealer To Retailer Sale|https://your-link.com\n📋 Attendance|https://...\n👥 Employees|https://...\n📦 Package|https://...', 
+              type: 'textarea', value: currentStr }
+        ], async (vals) => {
+            if(vals.links) {
+                let lines = vals.links.split('\n').map(s => s.trim()).filter(s => s);
+                let newArr = [];
+                for(let line of lines) {
+                    let [txt, url] = line.split('|');
+                    if(txt && url) {
+                        newArr.push({ id: Date.now() + Math.random(), text: txt.trim(), url: url.trim() });
+                    }
+                }
+                if(newArr.length) {
+                    await callAPI('updateNavLinks', { links: JSON.stringify(newArr) });
+                    showToast('✅ নেভ লিংক আপডেট হয়েছে');
+                    await loadAll();
+                } else {
+                    showToast('❌ ভুল ফরম্যাট! টেক্সট|URL আকারে দিন');
+                }
+            }
+        });
+    }
 
     // ========== প্রিমিয়াম পপআপ ফাংশন ==========
     function showModal(title, icon, fields, onSave) {
@@ -591,21 +695,20 @@
         modalDiv.className = 'modal-overlay';
         let inputsHtml = '';
         fields.forEach(f => {
-            inputsHtml += `
-                <div class="input-group">
-                    <label>${f.label}</label>
-                    <${f.type === 'textarea' ? 'textarea' : 'input'} 
-                        id="field_${f.name}" 
-                        placeholder="${f.placeholder}" 
-                        ${f.type === 'textarea' ? 'rows="3"' : `type="${f.type || 'text'}"`}
-                    >${f.value ? (f.type === 'textarea' ? f.value : '') : ''}</${f.type === 'textarea' ? 'textarea' : 'input'}>
-                </div>
-            `;
-            if (f.type !== 'textarea' && f.value) {
-                inputsHtml = inputsHtml.replace(`id="field_${f.name}"`, `id="field_${f.name}" value="${escapeHtml(String(f.value))}"`);
-            } else if (f.type === 'textarea' && f.value) {
-                let textarea = document.createElement('textarea');
-                // handled via innerHTML later
+            if (f.type === 'textarea') {
+                inputsHtml += `
+                    <div class="input-group">
+                        <label>${f.label}</label>
+                        <textarea id="field_${f.name}" placeholder="${f.placeholder}" rows="4">${escapeHtml(f.value || '')}</textarea>
+                    </div>
+                `;
+            } else {
+                inputsHtml += `
+                    <div class="input-group">
+                        <label>${f.label}</label>
+                        <input type="${f.type || 'text'}" id="field_${f.name}" placeholder="${f.placeholder}" value="${escapeHtml(f.value || '')}">
+                    </div>
+                `;
             }
         });
         
@@ -622,14 +725,6 @@
         `;
         document.body.appendChild(modalDiv);
         
-        // সঠিকভাবে ভ্যালু সেট করা
-        fields.forEach(f => {
-            let input = modalDiv.querySelector(`#field_${f.name}`);
-            if (input && f.value !== undefined) {
-                input.value = f.value;
-            }
-        });
-        
         modalDiv.querySelector('#modalSaveBtn').onclick = () => {
             let values = {};
             fields.forEach(f => {
@@ -642,7 +737,7 @@
         modalDiv.querySelector('#modalCancelBtn').onclick = () => modalDiv.remove();
     }
 
-    // NOTICE পপআপ
+    // Notice CRUD
     function openAddNotice() {
         showModal('➕ নতুন নোটিশ', '📢', [
             { name: 'title', label: 'শিরোনাম', placeholder: 'নোটিশের শিরোনাম', type: 'text' },
@@ -661,9 +756,9 @@
         let item = notices.find(n => n.id == id);
         if(item) {
             showModal('✏️ নোটিশ এডিট করুন', '📝', [
-                { name: 'title', label: 'শিরোনাম', placeholder: 'শিরোনাম', type: 'text', value: item.title },
-                { name: 'date', label: 'তারিখ', placeholder: 'তারিখ', type: 'text', value: item.date },
-                { name: 'description', label: 'বর্ণনা', placeholder: 'বর্ণনা', type: 'textarea', value: item.description }
+                { name: 'title', label: 'শিরোনাম', type: 'text', value: item.title },
+                { name: 'date', label: 'তারিখ', type: 'text', value: item.date },
+                { name: 'description', label: 'বর্ণনা', type: 'textarea', value: item.description }
             ], async (vals) => {
                 await callAPI('updateNotice', { id, ...vals });
                 showToast('✅ নোটিশ আপডেট হয়েছে');
@@ -672,7 +767,7 @@
         }
     }
     
-    // JOB পপআপ
+    // Job CRUD
     function openAddJob() {
         showModal('💼 নতুন জব সার্কুলার', '📢', [
             { name: 'title', label: 'পদবি', placeholder: 'ইলেকট্রিশিয়ান', type: 'text' },
@@ -706,7 +801,7 @@
         }
     }
     
-    // PRODUCT পপআপ
+    // Product CRUD
     function openAddProduct() {
         showModal('🔌 নতুন প্রোডাক্ট', '📦', [
             { name: 'name', label: 'পণ্যের নাম', placeholder: 'গোল্ড সুইচ', type: 'text' },
@@ -760,29 +855,8 @@
             loadAll();
         });
     }
-    
-    async function editNavLinks() {
-        if(!isAdmin) return;
-        let currentStr = navLinks.map(l => `${l.text}|${l.url}`).join(', ');
-        showModal('🔗 নেভিগেশন লিংক এডিট করুন', '🔗', [
-            { name: 'links', label: 'লিংক (টেক্সট|URL, কমা দিয়ে আলাদা)', placeholder: 'ওয়ারেন্টি|#warranty, সাপোর্ট|#support', type: 'textarea', value: currentStr }
-        ], async (vals) => {
-            if(vals.links) {
-                let pairs = vals.links.split(',').map(s => s.trim());
-                let newArr = [];
-                for(let p of pairs) {
-                    let [txt, url] = p.split('|');
-                    if(txt && url) newArr.push({ id: Date.now() + Math.random(), text: txt.trim(), url: url.trim() });
-                }
-                if(newArr.length) {
-                    await callAPI('updateNavLinks', { links: JSON.stringify(newArr) });
-                    showToast('✅ নেভ লিংক আপডেট হয়েছে');
-                    loadAll();
-                }
-            }
-        });
-    }
 
+    // অ্যাডমিন লগইন
     async function login(u, p) {
         let r = await callAPI('verifyAdmin', { username: u, password: p });
         if(r.success) {
@@ -827,16 +901,12 @@
     document.getElementById('addJobBtn')?.addEventListener('click', openAddJob);
     document.getElementById('addProductBtn')?.addEventListener('click', openAddProduct);
     document.getElementById('editContactBtn')?.addEventListener('click', editContacts);
+    document.getElementById('editNavBtn')?.addEventListener('click', editNavLinks);
     document.getElementById('floatingAdminBtn').onclick = () => isAdmin ? logout() : loginModal();
     document.getElementById('mainCtaBtn')?.addEventListener('click', () => {
         document.querySelector('.tab-btn[data-page="product"]').click();
         showToast('🔌 প্রোডাক্ট দেখুন');
     });
-    
-    // নেভ এডিট বাটন যুক্ত করুন সেকেন্ডারি নেভের পাশে
-    let editNavHtml = `<button id="editNavBtn" class="admin-btn" style="margin-left:auto; display:none;"><i class="fas fa-edit"></i> লিংক এডিট</button>`;
-    document.querySelector('.secondary-nav')?.insertAdjacentHTML('afterbegin', editNavHtml);
-    document.getElementById('editNavBtn')?.addEventListener('click', editNavLinks);
     
     if(localStorage.getItem('jtt_admin') === 'true') isAdmin = true;
     loadAll();
