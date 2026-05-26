@@ -486,9 +486,10 @@
             <h2 style="color:#fbbf24; margin-bottom:12px;">✨ স্বাগতম</h2>
             <p style="color:#fde68a; line-height:1.6;">JTT Bright Electric আধুনিক ও নিরাপদ ইলেকট্রিক্যাল সমাধান নিয়ে এসেছে। সুইচ, সকেট, LED লাইট এবং সম্পূর্ণ ওয়্যারিং সলিউশন।</p>
             <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;">
-                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ 500+ প্রকল্প</span>
-                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ 8+ বছর</span>
-                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ 24/7 সাপোর্ট</span>
+                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ 100+ Product </span>
+                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ 500+ Outlate</span>
+                <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ Free Delivery </span>
+               <span style="background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:30px;">✅ Replacement </span>
             </div>
         </div>
     </div>
@@ -847,8 +848,14 @@
         if(!isAdmin) return;
         showModal('📞 কন্টাক্ট তথ্য আপডেট', '📱', [
             { name: 'email', label: 'ইমেইল', type: 'text', value: contacts.email },
+           <span> <h3>> Founder & C.E.O <h3>
             { name: 'phone', label: 'ফোন নম্বর', type: 'text', value: contacts.phone },
             { name: 'whatsapp', label: 'হোয়াটসঅ্যাপ লিংক', type: 'text', value: contacts.whatsapp },
+          </span>
+           <span> <h3>> A.S.M <h3>
+            { name: 'phone', label: 'ফোন নম্বর', type: 'text', value: contacts.phone },
+            { name: 'whatsapp', label: 'হোয়াটসঅ্যাপ লিংক', type: 'text', value: contacts.whatsapp },
+          </span>
             { name: 'facebook', label: 'ফেসবুক লিংক', type: 'text', value: contacts.facebook }
         ], async (vals) => {
             await callAPI('updateContacts', vals);
